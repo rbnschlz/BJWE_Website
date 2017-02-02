@@ -1,0 +1,40 @@
+title: Contact
+pages: false
+files: false
+fields:
+  title:
+    label: Title
+    type:  text
+    readonly: true
+  about:
+    label: Description
+    type: textarea
+  street:
+    label: Street & Number
+    type:  text
+    width: 1/2
+  city:
+    label: Postal & City 
+    type:  text
+    width: 1/2
+  mail:
+    label: e-Mail
+    type: email
+    width: 1/2
+  phone:
+    label: Phone
+    type: tel
+    width: 1/2 
+  facebook:
+    label: Facebook
+    type: url
+    width: 1/2
+  instagram:  
+    label: Instagram
+    type: url
+    width: 1/2  
+options:
+  template: false
+  delete: false
+  url: false
+  status: false

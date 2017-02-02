@@ -1,9 +1,18 @@
-title: Home
+title: Index
 pages: false
+files:
+  fields: 
+    caption: 
+      type: textarea
+      label: Caption
+  sortable: true
 fields:
   title:
     label: Title
     type:  text
-  text:
-    label: Text
-    type:  textarea
+    readonly:  true
+options:
+  template: false
+  delete: false
+  url: false
+  status: false
