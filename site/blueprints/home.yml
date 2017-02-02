@@ -5,6 +5,15 @@ files:
     caption: 
       type: textarea
       label: Caption
+    sizing:
+      label: Size
+      type: select
+      options:
+        small: Small
+        medium: Medium
+        large: Large
+        full: Full Bleed
+
   sortable: true
 fields:
   title:

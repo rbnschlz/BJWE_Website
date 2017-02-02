@@ -1,5 +1,9 @@
-Caption: 
+Caption: Test Caption 2
 
 ----
 
-Sort: 1
+Sort: 2
+
+----
+
+Sizing: medium

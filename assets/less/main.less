@@ -18,9 +18,9 @@
 @c2: rgba(20, 67, 20, 100);
 @c3: #ccc;
 
-@mp-s: 15px;
-@mp-m: 30px;
-@mp-l: 45px;
+@mp-s: 10px;
+@mp-m: 20px;
+@mp-l: 40px;
 
 @fs-s: 15px;
 @fs-m: 28px;
@@ -59,9 +59,6 @@ em {
 }
 
 .text {
-  -webkit-user-select: text;
-  -moz-user-select: text;
-  -ms-user-select: text;
   user-select: text; 
   .fs-m;
   .lh-m;
@@ -111,6 +108,62 @@ li {
 
 /* Custom
 -------------------------------------------------- */
+.fade-transition {
+  transition: all 0.8s ease;
+  overflow: hidden;
+  visibility: visible;
+  opacity: 1;
+  position: absolute;
+}
+.fade-enter, .fade-leave {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#img_wrapper {
+  width: 100%;
+  // width: calc(~"100% - 20px");
+  padding: @mp-s;
+  height: 100%;
+  position: fixed;
+  div {
+    height: 100%;
+    // padding: @mp-s;
+    width: 100%;
+    text-align: center;
+    img {
+      height: 100%;
+      width: auto;
+      display: inline-block;
+      user-select: none; 
+    }
+    .small {
+      height: 30%;
+    }
+    .medium {
+      height: 60%;
+    }
+  }
+}
+
+.control_prev {
+  width: 50%;
+  height: 100%;
+  float: left;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.control_next {
+  width: 50%;
+  height: 100%;
+  float: left;
+  position: fixed;
+  left: 50%;
+  top: 0;
+}
+
 
 
 
