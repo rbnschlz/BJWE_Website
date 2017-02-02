@@ -22,7 +22,7 @@
   <link rel="image_src" href="<?php //echo $img; ?>" />
 
   <?php 
-    echo less('assets/less/main.less');
+    // echo less('assets/less/main.less');
     echo css('assets/css/main.css');
    ?>
 
@@ -37,3 +37,4 @@
 
 
 </head>
+<body>

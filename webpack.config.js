@@ -29,6 +29,9 @@ module.exports = {
 			jQuery: "jquery",
 			_: "lodash"
 		}),
+		new webpack.ProvidePlugin({
+			$: "Vue",
+		}),
 
 		new webpack.optimize.LimitChunkCountPlugin({maxChunks: 0}),
 
