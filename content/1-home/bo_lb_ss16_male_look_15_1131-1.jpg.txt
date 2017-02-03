@@ -1,5 +1,21 @@
-Caption: 
+Caption: Hugo Boss, 2014
 
 ----
 
 Sort: 11
+
+----
+
+Sizing: full
+
+----
+
+Position: center
+
+----
+
+Keepprev: false
+
+----
+
+Bgcolor: white

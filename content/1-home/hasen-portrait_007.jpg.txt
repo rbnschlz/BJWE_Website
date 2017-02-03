@@ -1,5 +1,21 @@
-Caption: 
+Caption: Magic Trick, 2010
 
 ----
 
 Sort: 15
+
+----
+
+Sizing: full
+
+----
+
+Position: center
+
+----
+
+Keepprev: false
+
+----
+
+Bgcolor: white

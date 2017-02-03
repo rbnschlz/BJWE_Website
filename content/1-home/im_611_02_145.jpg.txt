@@ -1,5 +1,21 @@
-Caption: 
+Caption: Lena, 2016
 
 ----
 
 Sort: 17
+
+----
+
+Sizing: large
+
+----
+
+Position: center
+
+----
+
+Keepprev: false
+
+----
+
+Bgcolor: white

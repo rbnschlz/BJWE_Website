@@ -1,5 +1,21 @@
-Caption: 
+Caption: Der Himmel ist rosa, 2013
 
 ----
 
-Sort: 8
+Sort: 9
+
+----
+
+Sizing: full
+
+----
+
+Position: center
+
+----
+
+Keepprev: true
+
+----
+
+Bgcolor: white

@@ -1,9 +1,21 @@
-Caption: Test Caption
+Caption: Denise Lyons, 2015
 
 ----
 
-Sort: 1
+Sort: 2
 
 ----
 
 Sizing: small
+
+----
+
+Position: left
+
+----
+
+Keepprev: false
+
+----
+
+Bgcolor: white

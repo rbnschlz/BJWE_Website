@@ -1,5 +1,21 @@
-Caption: 
+Caption: In Transit, 2014
 
 ----
 
-Sort: 6
+Sort: 7
+
+----
+
+Sizing: small
+
+----
+
+Position: center
+
+----
+
+Keepprev: false
+
+----
+
+Bgcolor: white

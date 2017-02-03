@@ -1,16 +1,16 @@
-Title: Kirby Starterkit
+Title: Benjamin Werner
 
 ----
 
-Author: Bastian Allgeier GmbH
+Author: Robin Scholz & OFF OFFICE
 
 ----
 
-Description: This is Kirby's Starterkit.
+Description: 
 
 ----
 
-Keywords: Kirby, CMS, file-based
+Keywords: 
 
 ----
 

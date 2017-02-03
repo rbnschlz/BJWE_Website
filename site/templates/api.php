@@ -10,6 +10,9 @@ header('Content-type: application/json; charset=utf-8');
     		'url'   => (string)$image->url(),
     		'caption' => (string)$image->caption(),
     		'sizing' => (string)$image->sizing(),
+    		'position' => (string)$image->position(),
+    		'keepprev' => (string)$image->keepprev(),
+    		'bgcolor'  => (string)$image->bgcolor(),
   		);
 	}
 

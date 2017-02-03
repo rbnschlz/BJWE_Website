@@ -1,5 +1,21 @@
-Caption: 
+Caption: Turnhalle, 2017
 
 ----
 
-Sort: 9
+Sort: 10
+
+----
+
+Sizing: medium
+
+----
+
+Position: right
+
+----
+
+Keepprev: false
+
+----
+
+Bgcolor: white

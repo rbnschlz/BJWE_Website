@@ -1,5 +1,21 @@
-Caption: 
+Caption: Shanghai, 2012
 
 ----
 
-Sort: 7
+Sort: 8
+
+----
+
+Sizing: large
+
+----
+
+Position: center
+
+----
+
+Keepprev: false
+
+----
+
+Bgcolor: white

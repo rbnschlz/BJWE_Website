@@ -1,5 +1,27 @@
 require("../less/main.less");
 
+var caption = function(){
+	$('body').bind('click', function (event) {
+		$('#popup').css('left',event.pageX)
+		$('#popup').css('top',event.pageY);  
+		// $("#popup").css("position", "fixed");
+	});
+}
+
+var captionint = function() {
+	var spanwidth = $('#popup').outerWidth();
+	var spanheight = $('#popup').outerHeight();
+	var posx = (Math.random() * ($(document).width() - spanwidth));
+	var posy = (Math.random() * ($(document).height() - spanheight));
+		$('#popup').css('left',posx);
+		$('#popup').css('top',posy);
+		// $('#popup').css('display','inline');
+}
+
+$(window).on('load', function() {
+	captionint();
+}); 
+
 //Slideshow
 $(document).ready(function(){
 	//Get JSON
@@ -20,9 +42,20 @@ $(document).ready(function(){
 	  		return el.sizing;
 		});
 
-		// console.log(urls);
-		// console.log(captions);
-		// console.log(sizes);
+		//Convert Positions to Array
+		var positions = images.map(function (el) {
+	  		return el.position;
+		});
+
+		//Convert Keep Prev to Array
+		var keepprevs = images.map(function (el) {
+	  		return el.keepprev;
+		});
+
+		//Convert Keep Prev to Array
+		var bgcolors = images.map(function (el) {
+	  		return el.bgcolor;
+		});
 
 		//Initialize Vue Slider
 		var slider = new Vue({
@@ -30,9 +63,17 @@ $(document).ready(function(){
 		    data: {
 		    	images: urls,
 		    	size: sizes,
+		    	pos: positions,
 		    	capt: captions,
+		    	bg: bgcolors,
+		    	previmg: keepprevs,
 		        currentNumber: 0,
 		    },
+		    
+		    created: function () {
+        		$('#popup').css('display','inline');
+    		},
+
 		    methods: {
 		        next: function() {
 		            this.currentNumber += 1
@@ -41,16 +82,56 @@ $(document).ready(function(){
 		            this.currentNumber -= 1
 		        }
 		    }
-		});
+		})
 	});
 
+	caption();
 });
+
+	//Test Slider
+	// new Vue({
+ //    el: '#image-slider',
+ //    data: {
+ //        images: ['http://i.imgur.com/vYdoAKu.jpg', 'http://i.imgur.com/PUD9HQL.jpg', 'http://i.imgur.com/Lfv18Sb.jpg', 'http://i.imgur.com/tmVJtna.jpg', 'http://i.imgur.com/ZfFAkWZ.jpg'],
+ //        currentNumber: 0,
+ //        timer: null
+ //    },
+
+ //    created: function () {
+ //        this.startRotation();
+ //    },
+
+ //    methods: {
+ //        startRotation: function() {
+ //            this.timer = setInterval(this.next, 3000);
+ //        },
+
+ //        stopRotation: function() {
+ //            clearTimeout(this.timer);
+ //            this.timer = null;
+ //        },
+
+ //        next: function() {
+ //            this.currentNumber += 1
+ //        },
+ //        prev: function() {
+ //            this.currentNumber -= 1
+ //        }
+ //    }
+	// });
+
 
 //Old
 (function($) {
 
-	var example = function(){
-	}
+	// var caption = function(){
+	// 	$('body').bind('click', function (event) {
+	// 		$('#popup').css('left',event.pageX);      // <<< use pageX and pageY
+	// 		$('#popup').css('top',event.pageY);
+	// 		$('#popup').css('display','inline');     
+	// 		$("#popup").css("position", "absolute");  // <<< also make it absolute!
+	// 	});
+	// }
 
 	//document ready
 	$(document).ready(function(){
@@ -61,9 +142,14 @@ $(document).ready(function(){
 
 
 	//on load
-	$(window).load(function(){
-		
-	});
+	// $(window).on('load', function() {
+	// var spanwidth = ('#popup').outerWidth();
+	// var spanheight = ('#popup').outerHidth();
+	// var posx = (Math.random() * ($(document).width() - spanwidth)).toFixed();
+	// var posy = (Math.random() * ($(document).height() - spanheight)).toFixed()
+	// $('#popup').css('left',posx);
+	// $('#popup').css('top',posy);
+	// }; 
 
 	//keypresses
 	$(document).keydown(function(e) {

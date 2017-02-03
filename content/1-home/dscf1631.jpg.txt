@@ -1,5 +1,21 @@
-Caption: 
+Caption: CHE, 2011
 
 ----
 
 Sort: 14
+
+----
+
+Sizing: large
+
+----
+
+Position: center
+
+----
+
+Keepprev: false
+
+----
+
+Bgcolor: white

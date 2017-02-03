@@ -13,7 +13,29 @@ files:
         medium: Medium
         large: Large
         full: Full Bleed
-
+      default: large
+    position:
+      label: Position
+      type: select
+      options:
+        left: Left
+        right: Right
+        center: Center
+      default: center
+    keepprev:
+      label: Previous image visible?
+      type: toggle
+      text: yes/no
+      default: no
+    bgcolor:
+      label: Background Color
+      type: select
+      options:
+        red: Red
+        blue: Blue
+        black: Black
+        white: White
+      default: white 
   sortable: true
 fields:
   title:

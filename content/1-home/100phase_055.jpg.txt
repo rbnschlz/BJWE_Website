@@ -1,9 +1,21 @@
-Caption: Test Caption 2
+Caption: Benjamin, 2013
 
 ----
 
-Sort: 2
+Sort: 3
 
 ----
 
 Sizing: medium
+
+----
+
+Position: right
+
+----
+
+Keepprev: true
+
+----
+
+Bgcolor: white

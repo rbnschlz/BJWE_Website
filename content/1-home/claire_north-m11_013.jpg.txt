@@ -1,5 +1,21 @@
-Caption: 
+Caption: Claire, 2015
 
 ----
 
-Sort: 13
+Sort: 1
+
+----
+
+Sizing: large
+
+----
+
+Position: center
+
+----
+
+Keepprev: false
+
+----
+
+Bgcolor: white

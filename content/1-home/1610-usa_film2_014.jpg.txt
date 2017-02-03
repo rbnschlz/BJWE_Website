@@ -1,5 +1,21 @@
-Caption: 
+Caption: New York, 2016
 
 ----
 
-Sort: 5
+Sort: 6
+
+----
+
+Sizing: medium
+
+----
+
+Position: left
+
+----
+
+Keepprev: false
+
+----
+
+Bgcolor: white

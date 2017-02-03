@@ -1,5 +1,21 @@
-Caption: 
+Caption: James, 2015
 
 ----
 
 Sort: 16
+
+----
+
+Sizing: large
+
+----
+
+Position: center
+
+----
+
+Keepprev: false
+
+----
+
+Bgcolor: white

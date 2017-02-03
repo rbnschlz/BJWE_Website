@@ -1,9 +1,21 @@
-Caption: Test Caption 3
+Caption: New York, 2016
 
 ----
 
-Sort: 3
+Sort: 4
 
 ----
 
 Sizing: medium
+
+----
+
+Position: 
+
+----
+
+Keepprev: false
+
+----
+
+Bgcolor: white
