@@ -30,7 +30,7 @@
 
 @lbTransitionLength: 0.25s;
 
-@fontStack: "GerstnerProgramm-BookOne", "Times", 'Helvetica Neue', 'Helvetica', Arial, serif;
+@fontStack: "VictorRonnie-UprightiKerned", 'Helvetica Neue', 'Helvetica', Arial, serif;
 
 .fs-m {
     font-size: @fs-m;
@@ -111,7 +111,7 @@ li {
 /* Custom
 -------------------------------------------------- */
 .fade-enter-active, .fade-leave-active {
-  transition: opacity 0.5s
+  transition: opacity 0.25s
 }
 .fade-enter, 
 .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
@@ -191,7 +191,6 @@ li {
   width: 100%;
   height: 100%;
   position: fixed;
-  // left: 50%;
   top: 0;
   z-index: 99
 }
@@ -208,6 +207,7 @@ li {
   display: none;
   position: fixed;
   z-index: 95;
+  margin: @mp-s;
   // text-shadow: 0 0 5px #fff;
 }
 

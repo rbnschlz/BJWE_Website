@@ -54,22 +54,14 @@
 		    	:style="{ backgroundImage: 'url(' + images[Math.abs(currentNumber) % images.length] + ')' }"
 		    	:class="[size[Math.abs(currentNumber) % images.length], pos[Math.abs(currentNumber) % images.length]]"
 		    ></div>
-		    <div 
+<!-- 		    <div 
 		    	v-if= "previmg[Math.abs(currentNumber) % images.length] == 'true'"
 		    	class="img_slide_inner_2"
 		    	:style="{ backgroundImage: 'url(' + images[Math.abs(currentNumber) % images.length -1] + ')' }"
 		    	:class="[size[Math.abs(currentNumber) % images.length -1], pos[Math.abs(currentNumber) % images.length -1]]"
-		    ></div>
+		    ></div> -->
 	    </div>
 	</transition-group>
-
-	<!-- Preloader -->
-	<div 
-    	class="img_slide_inner_2"
-    	style="visibility: hidden"
-    	:style="{ backgroundImage: 'url(' + images[Math.abs(currentNumber) % images.length -1] + ')' }"
-    	:class="[size[Math.abs(currentNumber) % images.length +1], pos[Math.abs(currentNumber) % images.length +1]]"
-    ></div>
 </div>
 
 <?php snippet('footer') ?>
