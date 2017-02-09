@@ -1,13 +1,59 @@
 require("../less/main.less");
 
 var caption = function(){
-	$('body').bind('click', function (event) {
+	// $("#img_wrapper").css('opacity', '0');
+	$('#img_wrapper').bind('click', function (event) {
+		// $('#popup').addClass('hidden');
 		$('#popup').css('left',event.pageX)
 		$('#popup').css('top',event.pageY);  
+		// $('#popup').removeClass('hidden');
+		// $('#img_wrapper').css('opacity', '100');
 	});
 }
 
+var title = function(){
+	// $('.hidethis').addClass('hidden');
+	// $('#title_wrapper').bind('mouseenter', function (event) {
+	// 	$('.hidethis').toggleClass('hidden');
+	// });
+	// $('#title_wrapper').bind('mouseleave', function (event) {
+	// 	$('.hidethis').toggleClass('hidden');
+	// });
+	$('#title_wrapper').bind('click', function (event) {
+		// setTimeout(function() {
+		// 	$('#popup').toggleClass('hidden');
+		// }, 500);
+		// $('.img_slide').toggleClass('mini');
+		// $('#popup').toggleClass('mini');
+		// setTimeout(function() {
+		$('.info_wrapper').toggleClass('hidden');
+		$('#img_wrapper').toggleClass('blur');
+		$('#title_wrapper').toggleClass('whitetype');
+		var text = $('#title_wrapper a').text();
+    	$('#title_wrapper a').text(text == "Benjamin Werner" ? "BW" : "Benjamin Werner");
+		// }, 1);
+	});
+	$('.info_wrapper').bind('click', function (event) {
+		$('.info_wrapper').toggleClass('hidden');
+		$('#img_wrapper').toggleClass('blur');
+		$('#title_wrapper').toggleClass('whitetype');
+		var text = $('#title_wrapper a').text();
+    	$('#title_wrapper a').text(text == "Benjamin Werner" ? "BW" : "Benjamin Werner");
+	});
+}
+
+
+// var fade = function () {
+// 	// $(".hidethis").hide();
+// 	$("#img_wrapper").css('opacity', '0');
+// 	$('#img_wrapper').bind('click', function (event) {
+// 		$('#img_wrapper').css('opacity', '100');
+// 		$('.hidethis').css('visibility', 'hidden');
+// 	});
+// };
+
 var captionint = function() {
+	// $("#img_wrapper").css('opacity', '0');
 	var spanwidth = $('#popup').outerWidth();
 	var spanheight = $('#popup').outerHeight();
 	var posx = (Math.random() * ($(document).width() - spanwidth));
@@ -18,6 +64,10 @@ var captionint = function() {
 
 $(window).on('load', function() {
 	captionint();
+	title();
+		// setTimeout(function() {
+		$('#img_wrapper').removeClass('blur');
+	// }, 200);
 }); 
 
 //Slideshow
@@ -55,34 +105,24 @@ $(document).ready(function(){
 	  		return el.bgcolor;
 		});
 
-
-		//Build Component
-		Vue.component('slideshow', {
-  			 template: '<div>A custom component!</div>'
-		});
-
-		Vue.component('slideshow', {
-			template: '\
-			<transition-group>\
-			    	<div class="img_slide">\
-					    <div class="img_slide_inner"></div>\
-				</div>\
-			</transition-group>\
-			',
-			methods: {
-				beforeEnter: function (el) {
-				},
-				afterEnter: function (el) {
-				}
-			}
-		});
-
-			
-
+	$.each(imgarray, function (index, value) {
+  		console.log("yes");
+	});
+// Vue.component('slideshow', {
+// 			template: '\
+// 			<transition-group>\
+// 			    	<div class="img_slide">\
+// 					    <div class="img_slide_inner"\
+// 					    	style="{ backgroundImage: url(this.url) }"\
+// 					    ></div>\
+// 				</div>\
+// 			</transition-group>\
+// 			',
+// 			methods: {
+// 			}
+// 		});
 
 		//Initialize Vue Slider
-		// var currentCapt = "";
-		// var nextCapt = "";
 		var slider = new Vue({
 		    el: '#img_wrapper',
 		    data: {
@@ -108,21 +148,6 @@ $(document).ready(function(){
 		        	//Move forward in array
 		            this.currentNumber += 1;
 		            this.nextNumber += 1;
-
-		            // slider.currentCapt = this.capt[this.currentNumber];
-		            // slider.nextCapt = this.capt[this.nextNumber];
-
-		            // currentCapt == this.capt[this.currentNumber];
-		            // nextCapt == this.capt[this.nextNumber];
-		            
-		            // if (event) {
-		            	// if (currentCapt =! 1) {
-					    	// caption();
-					    // }
-			      //       console.log(currentCapt);
-				    	// console.log(nextCapt);
-				    	// console.log(capt);
-		            // }
 		        },
 		        prev: function() {
 		        	//Move backward in array
@@ -131,23 +156,35 @@ $(document).ready(function(){
 		    },
 
 		    updated: function () {
-
-				// this.nextNumber += 1;
 				Vue.set(slider, 'currentCapt', this.capt[Math.abs(this.currentNumber) % this.images.length])
 				Vue.set(slider, 'nextCapt', this.capt[Math.abs(this.nextNumber) % this.images.length])
-				// console.log(slider.currentCapt);
+
 				if (1 < 2) {
 					caption();
-				} else {
-					console.log(slider.currentCapt);
-					console.log(slider.nextCapt);
 				}
-		       // caption();
-				// console.log(slider.nextCapt);
+				console.log(slider.currentCapt);
+				console.log(slider.nextCapt);
     		},
 		})
 	});
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //Old

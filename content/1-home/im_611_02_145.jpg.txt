@@ -6,7 +6,7 @@ Sort: 17
 
 ----
 
-Sizing: large
+Sizing: full
 
 ----
 

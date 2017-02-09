@@ -14,4 +14,4 @@ Keywords:
 
 ----
 
-Copyright: © 2009-(date: Year) (link: http://getkirby.com text: Kirby)
+Copyright: © (date: Year) Benjamin Werner

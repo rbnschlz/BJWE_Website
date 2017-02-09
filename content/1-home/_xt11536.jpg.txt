@@ -6,7 +6,7 @@ Sort: 9
 
 ----
 
-Sizing: full
+Sizing: medium
 
 ----
 
