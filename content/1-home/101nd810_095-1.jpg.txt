@@ -6,7 +6,7 @@ Sort: 10
 
 ----
 
-Sizing: medium
+Sizing: large
 
 ----
 
