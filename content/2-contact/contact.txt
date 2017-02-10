@@ -10,11 +10,11 @@ About: My work explores the relationship between consumerist fetishism and copyc
 
 ----
 
-Street: Guldeinstraße 30
+Street: Daiserstraße 44b
 
 ----
 
-City: 80339 München
+City: 81371 München
 
 ----
 
@@ -22,12 +22,26 @@ Mail: bw@benjaminwerner.de
 
 ----
 
-Phone: 0151 651 55 094
+Phone: +49 (0) 173 587 92 11
 
 ----
 
-Facebook: 
+Facebook: https://www.facebook.com/benjamin.werner.146
 
 ----
 
-Instagram: 
+Instagram: https://www.instagram.com/schobinrolz/
+
+----
+
+Represent: 
+
+- 
+  name: Soothing Shade
+  url: http://soothingshade.com/
+  city: Germany
+  location: Germany
+- 
+  name: MINI TITLE
+  url: http://www.minititle.com
+  location: UK and France

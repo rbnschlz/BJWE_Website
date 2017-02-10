@@ -1,8 +1,8 @@
-Caption: Hugo Boss, 2014
+Caption: 
 
 ----
 
-Sort: 11
+Sort: 12
 
 ----
 
@@ -19,3 +19,7 @@ Keepprev: false
 ----
 
 Bgcolor: white
+
+----
+
+Textcolor: white

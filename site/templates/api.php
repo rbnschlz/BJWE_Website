@@ -13,6 +13,7 @@ header('Content-type: application/json; charset=utf-8');
     		'position' => (string)$image->position(),
     		'keepprev' => (string)$image->keepprev(),
     		'bgcolor'  => (string)$image->bgcolor(),
+    		'textcolor'  => (string)$image->textcolor(),
   		);
 	}
 

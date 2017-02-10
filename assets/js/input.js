@@ -2,6 +2,17 @@ require("../less/main.less");
 
 var caption = function(){
 	$('#img_wrapper').bind('click', function (event) {
+		$('#popup').removeClass("opacityzero");
+		$('#popup').css('left',event.pageX)
+		$('#popup').css('top',event.pageY);
+	});
+}
+
+var captionint = function() {
+	$('#intro_wrapper').bind('click', function (event) {
+		$('#intro_wrapper').hide();
+		$('#popup').removeClass("opacityzero");
+		$('.img_wrapper_inner').removeClass('blur');
 		$('#popup').css('left',event.pageX)
 		$('#popup').css('top',event.pageY);
 	});
@@ -9,40 +20,20 @@ var caption = function(){
 
 var title = function(){
 	$('#title_wrapper, .info_wrapper').bind('click', function (event) {
+		$('#popup').toggleClass("opacityzero");
+		$('.info_menu').toggleClass("opacityzero");
 		$('.info_wrapper').toggleClass('hidden');
-		$('#img_wrapper').toggleClass('blur');
+		$('.img_wrapper_inner').toggleClass('blur');
 		$('#title_wrapper').toggleClass('whitetype');
 		var text = $('#title_wrapper a').text();
 	});
 }
 
 var info = function(){
-	$('.info_menu a').bind('click', function (event) {
+	$('.headline').bind('click', function (event) {
 		event.stopPropagation();
-	    var showthis = $(this).attr('data-target');
-	    $(showthis).siblings().addClass('hidden');
-		$(showthis).toggleClass('hidden');
+	    $(".info_imprint_inner").toggleClass('opacityzero');
 	});	
-	$('#title_wrapper').bind('mouseenter', function (event) {
-		$(".hideme").addClass('hidden');
-	});	
-}
-
-var captionint = function() {
-	$('#popup').hide();
-	// var spanwidth = $('#popup').outerWidth();
-	// var spanheight = $('#popup').outerHeight();
-	// var posx = (Math.random() * ($(document).width() - spanwidth));
-	// var posy = (Math.random() * ($(document).height() - spanheight));
-	// 	$('#popup').css('left',posx);
-	// 	$('#popup').css('top',posy);
-
-	$('#intro_wrapper').bind('click', function (event) {
-		$('#intro_wrapper').hide();
-		$('#img_wrapper').removeClass('blur');
-		$('#popup').css('left',event.pageX)
-		$('#popup').css('top',event.pageY);
-	});
 }
 
 $(window).on('load', function() {
@@ -53,6 +44,7 @@ $(window).on('load', function() {
 
 //Slideshow
 $(document).ready(function(){
+	$('#popup').hide();
 	//Get JSON
 	var imgarray = $.getJSON( "api", function(images) {
 
@@ -81,27 +73,15 @@ $(document).ready(function(){
 	  		return el.keepprev;
 		});
 
-		//Convert Keep Prev to Array
+		//Convert Background Color to Array
 		var bgcolors = images.map(function (el) {
 	  		return el.bgcolor;
 		});
 
-	$.each(imgarray, function (index, value) {
-  		console.log("yes");
-	});
-// Vue.component('slideshow', {
-// 			template: '\
-// 			<transition-group>\
-// 			    	<div class="img_slide">\
-// 					    <div class="img_slide_inner"\
-// 					    	style="{ backgroundImage: url(this.url) }"\
-// 					    ></div>\
-// 				</div>\
-// 			</transition-group>\
-// 			',
-// 			methods: {
-// 			}
-// 		});
+		//Convert Caption Color to Array
+		var textcolors = images.map(function (el) {
+	  		return el.textcolor;
+		});
 
 		//Initialize Vue Slider
 		var slider = new Vue({
@@ -112,11 +92,9 @@ $(document).ready(function(){
 		    	pos: positions,
 		    	capt: captions,
 		    	bg: bgcolors,
+		    	col: textcolors,
 		    	previmg: keepprevs,
 		        currentNumber: 0,
-		        nextNumber: 1,
-		        currentCapt: '',
-		        nextCapt: '',
 		    },
 
 		    created: function () {
@@ -128,7 +106,7 @@ $(document).ready(function(){
 		        next: function(event) {
 		        	//Move forward in array
 		            this.currentNumber += 1;
-		            this.nextNumber += 1;
+
 		        },
 		        prev: function() {
 		        	//Move backward in array
@@ -136,13 +114,11 @@ $(document).ready(function(){
 		        },
 		    },
 
-		    updated: function () {
-				Vue.set(slider, 'currentCapt', this.capt[Math.abs(this.currentNumber) % this.images.length])
-				Vue.set(slider, 'nextCapt', this.capt[Math.abs(this.nextNumber) % this.images.length])
+		    beforeUpdate: function() {
+		    },
 
-				if (1 < 2) {
-					caption();
-				}
+		    updated: function () {
+				caption();
 				console.log(slider.currentCapt);
 				console.log(slider.nextCapt);
     		},
@@ -152,6 +128,16 @@ $(document).ready(function(){
 
 
 
+
+
+
+
+	// var spanwidth = $('#popup').outerWidth();
+	// var spanheight = $('#popup').outerHeight();
+	// var posx = (Math.random() * ($(document).width() - spanwidth));
+	// var posy = (Math.random() * ($(document).height() - spanheight));
+	// 	$('#popup').css('left',posx);
+	// 	$('#popup').css('top',posy);
 
 
 

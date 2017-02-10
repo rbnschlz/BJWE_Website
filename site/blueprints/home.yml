@@ -31,11 +31,16 @@ files:
       label: Background Color
       type: select
       options:
-        red: Red
-        blue: Blue
         black: Black
         white: White
       default: white 
+    textcolor:
+      label: Caption Color
+      type: select
+      options:
+        black: Black
+        white: White
+      default: black 
   sortable: true
 fields:
   title:

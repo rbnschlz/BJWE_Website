@@ -19,3 +19,7 @@ Bgcolor: white
 ----
 
 Sort: 25
+
+----
+
+Textcolor: black

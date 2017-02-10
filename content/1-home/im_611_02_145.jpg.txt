@@ -1,12 +1,12 @@
-Caption: Lena, 2016
+Caption: 
 
 ----
 
-Sort: 24
+Sort: 26
 
 ----
 
-Sizing: full
+Sizing: medium
 
 ----
 
@@ -19,3 +19,7 @@ Keepprev: false
 ----
 
 Bgcolor: white
+
+----
+
+Textcolor: white

@@ -3,102 +3,107 @@
 
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
-<?php
-	// $data = $pages->find('home')->images()->sortBy('sort', 'asc');
-	// $json = array();
+<div id="intro_wrapper"></div>
 
-	// foreach($data as $image) {
-	// 	// $json[] = (string)$image->url();
-	// 	$json[] = array(
- //    		'url'   => (string)$image->url(),
- //    		'caption' => (string)$image->caption(),
- //    		'sizing' => (string)$image->sizing(),
- //    		'position' => (string)$image->position(),
- //    		'keepprev' => (string)$image->keepprev(),
- //    		'bgcolor'  => (string)$image->bgcolor(),
- //  		);
-	// }
+<!-- <div id="title_wrapper_pseudo">
+	<a>Benjamin Werner</a>
+</div> -->
 
-	
-	// $json =  json_encode($json);
-	// $json = str_replace("\/", "/", $json);
-
-
-	// echo $json;
-?>
-
-<div id="intro_wrapper">
-<!-- BENJAMIN WERNER -->
+<div id="title_wrapper">
+	<a>Benjamin Werner</a>
 </div>
 
-<div id="title_wrapper" class="toggleupdown"><a>
-	<span class="donthidethis">B</span><span 
-	class="hidethis">e</span><span 
-	class="hidethis">n</span><span 
-	class="hidethis">j</span><span 
-	class="hidethis">a</span><span 
-	class="hidethis">m</span><span 
-	class="hidethis">i</span><span 
-	class="hidethis">n</span><span 
-	class="hidethis">&nbsp;</span><span 
-	class="donthidethis">W</span><span 
-	class="hidethis">e</span><span 
-	class="hidethis">r</span><span 
-	class="hidethis">n</span><span 
-	class="hidethis">e</span><span 
-	class="hidethis">r</span>
-	<!-- Benjamin Werner -->
-</a></div>
+<div id="img_wrapper">
+	<div 
+		class="img_bg" 
+		:style="{ background: bg[Math.abs(currentNumber) % images.length] }"
+	></div>
 
-<div id="img_wrapper" class="blur">
+	<span 
+		id="popup"
+		v-for="number in [currentNumber]" 
+	    v-bind:key="number"
+		class="opacityzero"
+		>{{ capt[Math.abs(currentNumber) % images.length] }}
+	</span>
 
-    <!-- <a class="control_prev" @click="prev"></a> -->
-    <a class="control_next"  @click="next"></a>
-    <span 
-    		id="popup"
-    		v-for="number in [currentNumber]" 
-			v-bind:key="number"
-    	>{{ capt[Math.abs(currentNumber) % images.length] }}</span>
+	<div class="img_wrapper_inner blur">
+	    <a class="control_next"  @click="next"></a>
 
-    <transition-group name="fade" tag="div">
-    	<div 
-    		class="img_bg"
-    		v-for="number in [currentNumber]" 
-    		v-bind:key="number" 
-    		:style="{ background: bg[Math.abs(currentNumber) % images.length] }"
-    	></div>
-    	<div 
-    		class="img_slide"
-    		v-for="number in [currentNumber]" 
-		    v-bind:key="number" 
-    	>
-		    <div 
-		    	class="img_slide_inner"
-		    	:style="{ backgroundImage: 'url(' + images[Math.abs(currentNumber) % images.length] + ')' }"
-		    	:class="[size[Math.abs(currentNumber) % images.length], pos[Math.abs(currentNumber) % images.length]]"
-		    ></div>
-<!-- 		    <div 
-		    	v-if= "previmg[Math.abs(currentNumber) % images.length] == 'true'"
-		    	class="img_slide_inner_2"
-		    	:style="{ backgroundImage: 'url(' + images[Math.abs(currentNumber) % images.length -1] + ')' }"
-		    	:class="[size[Math.abs(currentNumber) % images.length -1], pos[Math.abs(currentNumber) % images.length -1]]"
-		    ></div> -->
-	    </div>
-	</transition-group>
+	    <transition-group name="fade" tag="div">
+	    	<div 
+	    		class="img_slide"
+	    		v-for="number in [currentNumber]" 
+			    v-bind:key="number" 
+	    	>
+				<div 
+			    	class="img_slide_inner"
+			    	:style="{ backgroundImage: 'url(' + images[Math.abs(currentNumber) % images.length] + ')' }"
+			    	:class="[size[Math.abs(currentNumber) % images.length], pos[Math.abs(currentNumber) % images.length]]"
+			    ></div>
+		    </div>
+		</transition-group>
+	</div>
 </div>
 
 <div class="info_wrapper hidden">
-	<div class="info_menu">
+	<div class="info_contact">
+		<span><a href="mailto:<?php echo $contact->mail(); ?>"><?php echo $contact->mail(); ?></a>, </span>
+		<span><?php echo $contact->phone(); ?></span>
+		<div class="info_adress">
+			<span><?php echo $contact->street(); ?>, </span>
+			<span><?php echo $contact->city(); ?></span>
+		</div>
+		<?php if ($contact->represent()->isNotEmpty()) {
+			$block = "<div class='info_represent'>";
+			foreach($contact->represent()->toStructure() as $agent) {
+				$block .= "<li>Represented";
+				$block .= $agent->location()->isNotEmpty() ? " in {$agent->location()} by " : " by ";
+				$block .= "<a href='";
+				$block .= $agent->url();
+				$block .= " target='_blank'>";
+				$block .= $agent->name();
+				$block .= "</a></li>";
+			}
+			$block .= "</div>";
+
+			echo $block;
+			};
+			if ($contact->instagram()->isNotEmpty()) { 
+				$block = "<a href='";
+				$block .= $contact->instagram()->html();
+				$block .= "' target='_blank'>Instagram</a>";
+
+				echo $block;
+			} ?>
+	</div>
+	<div class="info_imprint">
+		<a class="headline">Imprint</a>
+		<div class="info_imprint_inner opacityzero">
+			<p>All images and texts are copyrighted and owned by Benjamin Werner. Under no circumstances shall these digital files, 
+			images, videos and texts be used, copied, displayed or pulled from this site without the expressed written agreement of Benjamin Werner.
+			Benjamin Werner is not responsible for the content of any linked external website.</p>
+			<span>Art Direction by <a href="http://www.offoffice.de" target="_blank">OFF</a></span>
+			<span>Design and Development by <a href="http://www.robinscholz.com" target="_blank">Robin Scholz</a></span>
+			<?php echo $site->copyright()->kirbytext(); ?>
+		</div>
+	</div>
+</div>
+
+
+<!-- <span>Typeface by <a href="http://www.abcdinamo.com" target="_blank">Dinamo</a></span> -->
+
+<!-- <div class="info_menu opacityzero">
 		<a data-target=".info_about">About</a>,
 		<a data-target=".info_contact">Contact</a>,
 		<a data-target=".info_imprint">Imprint</a>
 	</div>
 
 	<div class="info_inner">
-		<div class="info_about hideme">
-				<?php echo $contact->about()->kirbytext(); ?>
+		<div class="info_about hidden">
+			<?php echo $contact->about()->kirbytext(); ?>
 		</div>
-		<div class="info_contact hideme hidden">
+		<div class="info_contact hidden">
 			<span><a href="mailto:<?php echo $contact->mail(); ?>"><?php echo $contact->mail(); ?></a>, </span>
 			<span><?php echo $contact->phone(); ?></span>
 			<div class="info_adress">
@@ -106,7 +111,7 @@
 				<span><?php echo $contact->city(); ?></span>
 			</div>
 		</div>
-		<div class="info_imprint hideme hidden">
+		<div class="info_imprint hidden">
 			<p>All images and texts are copyrighted and owned by Benjamin Werner. Under no circumstances shall these digital files, 
 			images, videos and texts be used, copied, displayed or pulled from this site without the expressed written agreement of Benjamin Werner.
 			Benjamin Werner is not responsible for the content of any linked external website.</p>
@@ -115,8 +120,7 @@
 			<span>Typeface by <a href="http://www.abcdinamo.com" target="_blank">Dinamo</a></span>
 			<?php echo $site->copyright()->kirbytext(); ?>
 		</div>
-	</div>
-</div>
+	</div> -->
 
 
 

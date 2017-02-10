@@ -33,6 +33,23 @@ fields:
     label: Instagram
     type: url
     width: 1/2  
+  represent:
+    label: Representation
+    type: structure
+    entry: >
+      {{name}}<br />
+      {{url}}<br />
+      {{location}}
+    fields:
+      name:
+        label: Name
+        type: text
+      url:
+        label: URL
+        type: url
+      location:
+        label: Location
+        type: text
 options:
   template: false
   delete: false
