@@ -1,8 +1,4 @@
-Caption: Lena, 2016
-
-----
-
-Sort: 18
+Caption: 
 
 ----
 
@@ -19,3 +15,7 @@ Keepprev: false
 ----
 
 Bgcolor: white
+
+----
+
+Sort: 25

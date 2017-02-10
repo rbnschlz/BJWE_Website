@@ -1,8 +1,4 @@
-Caption: Magic Trick
-
-----
-
-Sort: 15
+Caption: 
 
 ----
 
@@ -19,3 +15,7 @@ Keepprev: false
 ----
 
 Bgcolor: white
+
+----
+
+Sort: 14

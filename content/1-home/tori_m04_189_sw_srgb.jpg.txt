@@ -1,8 +1,4 @@
-Caption: In Transit, 2014
-
-----
-
-Sort: 20
+Caption: 
 
 ----
 
@@ -19,3 +15,7 @@ Keepprev: false
 ----
 
 Bgcolor: white
+
+----
+
+Sort: 7

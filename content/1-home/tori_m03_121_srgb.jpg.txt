@@ -1,8 +1,4 @@
-Caption: James
-
-----
-
-Sort: 16
+Caption: 
 
 ----
 
@@ -19,3 +15,7 @@ Keepprev: false
 ----
 
 Bgcolor: white
+
+----
+
+Sort: 6

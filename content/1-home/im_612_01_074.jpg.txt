@@ -1,0 +1,21 @@
+Caption: 
+
+----
+
+Sizing: medium
+
+----
+
+Position: center
+
+----
+
+Keepprev: false
+
+----
+
+Bgcolor: white
+
+----
+
+Sort: 26

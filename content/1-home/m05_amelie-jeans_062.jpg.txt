@@ -1,8 +1,4 @@
-Caption: 
-
-----
-
-Sort: 21
+Caption: Amelie, 2015
 
 ----
 
@@ -19,3 +15,7 @@ Keepprev: false
 ----
 
 Bgcolor: white
+
+----
+
+Sort: 1

@@ -1,12 +1,12 @@
-Caption: New York, 2016
+Caption: 
 
 ----
 
-Sort: 6
+Sort: 19
 
 ----
 
-Sizing: medium
+Sizing: large
 
 ----
 

@@ -1,8 +1,4 @@
-Caption: Claire
-
-----
-
-Sort: 13
+Caption: 
 
 ----
 
@@ -19,3 +15,7 @@ Keepprev: false
 ----
 
 Bgcolor: white
+
+----
+
+Sort: 8
