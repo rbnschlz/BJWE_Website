@@ -28,7 +28,21 @@
 	</span>
 
 	<div class="img_wrapper_inner blur">
-	    <a class="control_next"  @click="next"></a>
+	    <a class="control_next"></a>
+	    <?php foreach($page->image() as $image) {
+	    	$block = "<div class='img_slide'>";
+	    	$block .= "<div class='img_slide_inner";
+	    	$block .= "style='background-image: url(";
+	    	$block .= $image->url();
+	    	$block .= ")' class='";
+	    	$block .= $image->sizing();
+	    	$block .= "'></div></div>";
+
+	    }
+
+
+
+?>
 
 	    <transition-group name="fade" tag="div">
 	    	<div 
