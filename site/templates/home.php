@@ -1,8 +1,6 @@
 <?php snippet('header') ?>
 <body>
 
-<script src="https://unpkg.com/vue/dist/vue.js"></script>
-
 <div id="intro_wrapper"></div>
 
 <!-- <div id="title_wrapper_pseudo">
@@ -14,49 +12,32 @@
 </div>
 
 <div id="img_wrapper">
-	<div 
+	<!-- <div 
 		class="img_bg" 
 		:style="{ background: bg[Math.abs(currentNumber) % images.length] }"
-	></div>
+	></div> -->
 
-	<span 
-		id="popup"
-		v-for="number in [currentNumber]" 
-	    v-bind:key="number"
-		class="opacityzero"
-		>{{ capt[Math.abs(currentNumber) % images.length] }}
+	<span id="popup" class="opacityzero">
+	<?php echo $page->images()->sortBy('sort', 'asc')->first()->caption(); ?>
 	</span>
 
 	<div class="img_wrapper_inner blur">
-	    <a class="control_next"></a>
-	    <?php foreach($page->image() as $image) {
-	    	$block = "<div class='img_slide'>";
-	    	$block .= "<div class='img_slide_inner";
-	    	$block .= "style='background-image: url(";
-	    	$block .= $image->url();
-	    	$block .= ")' class='";
-	    	$block .= $image->sizing();
-	    	$block .= "'></div></div>";
 
+	    <a class="control_next"></a>
+
+	    <?php foreach($page->images()->sortBy('sort', 'asc') as $image) {
+	    	$block = "<div class='img_slide'>";
+	    	$block .= "<div class='img_slide_inner ";
+	    	$block .= $image->sizing();
+	    	$block .= "' data-style='background-image: url(";
+	    	$block .= $image->url();
+	    	$block .= ")' data-caption='";
+	    	$block .= $image->caption();
+	    	$block .= "'></div></div>";
+	    	echo $block;
 	    }
 
-
-
-?>
-
-	    <transition-group name="fade" tag="div">
-	    	<div 
-	    		class="img_slide"
-	    		v-for="number in [currentNumber]" 
-			    v-bind:key="number" 
-	    	>
-				<div 
-			    	class="img_slide_inner"
-			    	:style="{ backgroundImage: 'url(' + images[Math.abs(currentNumber) % images.length] + ')' }"
-			    	:class="[size[Math.abs(currentNumber) % images.length], pos[Math.abs(currentNumber) % images.length]]"
-			    ></div>
-		    </div>
-		</transition-group>
+		?>
 	</div>
 </div>
 
