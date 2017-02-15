@@ -14,7 +14,7 @@ Keepprev: false
 
 ----
 
-Bgcolor: black
+Bgcolor: 
 
 ----
 

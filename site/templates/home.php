@@ -7,7 +7,7 @@
 	<a>Benjamin Werner</a>
 </div> -->
 
-<div id="title_wrapper">
+<div id="title_wrapper" class="noclick">
 	<a>Benjamin Werner</a>
 </div>
 
@@ -26,7 +26,8 @@
 	    <a class="control_next"></a>
 
 	    <?php foreach($page->images()->sortBy('sort', 'asc') as $image) {
-	    	$block = "<div class='img_slide'>";
+	    	$block = "<div class='img_slide'";
+	    	$block .= $image->bgcolor() ? " style='background: {$image->bgcolor()}'>" : ">";
 	    	$block .= "<div class='img_slide_inner ";
 	    	$block .= $image->sizing();
 	    	$block .= "' data-style='background-image: url(";
@@ -41,6 +42,7 @@
 	</div>
 </div>
 
+<div class="info_background hidden"></div>
 <div class="info_wrapper hidden">
 	<div class="info_contact">
 		<span><a href="mailto:<?php echo $contact->mail(); ?>"><?php echo $contact->mail(); ?></a>, </span>
@@ -56,7 +58,7 @@
 				$block .= $agent->location()->isNotEmpty() ? " in {$agent->location()} by " : " by ";
 				$block .= "<a href='";
 				$block .= $agent->url();
-				$block .= " target='_blank'>";
+				$block .= "' target='_blank'>";
 				$block .= $agent->name();
 				$block .= "</a></li>";
 			}
@@ -80,45 +82,10 @@
 			Benjamin Werner is not responsible for the content of any linked external website.</p>
 			<span>Art Direction by <a href="http://www.offoffice.de" target="_blank">OFF</a></span>
 			<span>Design and Development by <a href="http://www.robinscholz.com" target="_blank">Robin Scholz</a></span>
+			<span>Typeface by <a href="http://www.abcdinamo.com" target="_blank">Dinamo</a></span>
 			<?php echo $site->copyright()->kirbytext(); ?>
 		</div>
 	</div>
 </div>
-
-
-<!-- <span>Typeface by <a href="http://www.abcdinamo.com" target="_blank">Dinamo</a></span> -->
-
-<!-- <div class="info_menu opacityzero">
-		<a data-target=".info_about">About</a>,
-		<a data-target=".info_contact">Contact</a>,
-		<a data-target=".info_imprint">Imprint</a>
-	</div>
-
-	<div class="info_inner">
-		<div class="info_about hidden">
-			<?php echo $contact->about()->kirbytext(); ?>
-		</div>
-		<div class="info_contact hidden">
-			<span><a href="mailto:<?php echo $contact->mail(); ?>"><?php echo $contact->mail(); ?></a>, </span>
-			<span><?php echo $contact->phone(); ?></span>
-			<div class="info_adress">
-				<span><?php echo $contact->street(); ?>, </span>
-				<span><?php echo $contact->city(); ?></span>
-			</div>
-		</div>
-		<div class="info_imprint hidden">
-			<p>All images and texts are copyrighted and owned by Benjamin Werner. Under no circumstances shall these digital files, 
-			images, videos and texts be used, copied, displayed or pulled from this site without the expressed written agreement of Benjamin Werner.
-			Benjamin Werner is not responsible for the content of any linked external website.</p>
-			<span>Art Direction by <a href="http://www.offoffice.de" target="_blank">OFF</a></span>
-			<span>Design and Development by <a href="http://www.robinscholz.com" target="_blank">Robin Scholz</a></span>
-			<span>Typeface by <a href="http://www.abcdinamo.com" target="_blank">Dinamo</a></span>
-			<?php echo $site->copyright()->kirbytext(); ?>
-		</div>
-	</div> -->
-
-
-
-
 
 <?php snippet('footer') ?>

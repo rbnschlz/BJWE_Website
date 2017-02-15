@@ -14,8 +14,12 @@ Keepprev: false
 
 ----
 
-Bgcolor: white
+Bgcolor: black
 
 ----
 
 Sort: 2
+
+----
+
+Textcolor: black
