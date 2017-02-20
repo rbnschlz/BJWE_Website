@@ -42,6 +42,6 @@ Represent:
   city: Germany
   location: Germany
 - 
-  name: MINI TITLE
+  name: Mini Title
   url: http://www.minititle.com
   location: UK and France

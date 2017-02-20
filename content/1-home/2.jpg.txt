@@ -14,20 +14,12 @@ Keepprev: exclude
 
 ----
 
-Bgcolor: white
-
-----
-
-Sort: 6
-
-----
-
-Textcolor: black
-
-----
-
 Hideslide: shown
 
 ----
 
-Overlaycolor: black
+Bgcolor: black
+
+----
+
+Sort: 5

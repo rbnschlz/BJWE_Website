@@ -14,11 +14,11 @@ Keepprev: include
 
 ----
 
-Bgcolor: WhiteSmoke
+Bgcolor: black
 
 ----
 
-Sort: 8
+Sort: 10
 
 ----
 
@@ -27,3 +27,7 @@ Textcolor: black
 ----
 
 Hideslide: shown
+
+----
+
+Overlaycolor: white

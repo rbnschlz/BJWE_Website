@@ -1,4 +1,4 @@
-Caption: 
+Caption: USA, 2015
 
 ----
 
@@ -14,7 +14,7 @@ Keepprev: exclude
 
 ----
 
-Bgcolor: Salmon
+Bgcolor: white
 
 ----
 
@@ -22,8 +22,12 @@ Textcolor: black
 
 ----
 
-Sort: 25
+Sort: 26
 
 ----
 
 Hideslide: shown
+
+----
+
+Overlaycolor: black

@@ -1,8 +1,8 @@
-Caption: 
+Caption: Munich, 2014
 
 ----
 
-Sort: 5
+Sort: 7
 
 ----
 
@@ -18,7 +18,7 @@ Keepprev: exclude
 
 ----
 
-Bgcolor: 
+Bgcolor: white
 
 ----
 
@@ -27,3 +27,7 @@ Textcolor: black
 ----
 
 Hideslide: shown
+
+----
+
+Overlaycolor: black

@@ -14,11 +14,11 @@ Keepprev: exclude
 
 ----
 
-Bgcolor: 
+Bgcolor: black
 
 ----
 
-Sort: 7
+Sort: 9
 
 ----
 
@@ -27,3 +27,7 @@ Textcolor: black
 ----
 
 Hideslide: hidden
+
+----
+
+Overlaycolor: black

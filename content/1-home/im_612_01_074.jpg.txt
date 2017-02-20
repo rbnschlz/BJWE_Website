@@ -1,4 +1,4 @@
-Caption: Ameline (Opus), 2016
+Caption: Ameline (for Opus), 2016
 
 ----
 
@@ -14,11 +14,11 @@ Keepprev: exclude
 
 ----
 
-Bgcolor: 
+Bgcolor: white
 
 ----
 
-Sort: 22
+Sort: 23
 
 ----
 
@@ -27,3 +27,7 @@ Textcolor: black
 ----
 
 Hideslide: shown
+
+----
+
+Overlaycolor: black

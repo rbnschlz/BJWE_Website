@@ -1,8 +1,8 @@
-Caption: 
+Caption: Lombok, 2013
 
 ----
 
-Sizing: full
+Sizing: small
 
 ----
 
@@ -14,7 +14,7 @@ Keepprev: exclude
 
 ----
 
-Bgcolor: 
+Bgcolor: white
 
 ----
 
@@ -22,8 +22,12 @@ Textcolor: black
 
 ----
 
-Sort: 16
+Sort: 18
 
 ----
 
 Hideslide: shown
+
+----
+
+Overlaycolor: black

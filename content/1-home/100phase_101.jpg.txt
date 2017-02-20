@@ -14,7 +14,7 @@ Keepprev: exclude
 
 ----
 
-Bgcolor: Olive
+Bgcolor: white
 
 ----
 
@@ -22,8 +22,12 @@ Textcolor: black
 
 ----
 
-Sort: 17
+Sort: 19
 
 ----
 
 Hideslide: shown
+
+----
+
+Overlaycolor: black

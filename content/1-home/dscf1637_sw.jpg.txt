@@ -1,4 +1,4 @@
-Caption: 
+Caption: Peter, 2011
 
 ----
 
@@ -18,7 +18,7 @@ Hideslide: shown
 
 ----
 
-Bgcolor: 
+Bgcolor: white
 
 ----
 
@@ -26,4 +26,8 @@ Textcolor: black
 
 ----
 
-Sort: 6
+Sort: 8
+
+----
+
+Overlaycolor: black

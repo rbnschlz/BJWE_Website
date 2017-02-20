@@ -1,8 +1,8 @@
-Caption: Jake (Hugo Boss), 2016
+Caption: Jake (for Hugo Boss), 2016
 
 ----
 
-Sort: 14
+Sort: 16
 
 ----
 
@@ -18,7 +18,7 @@ Keepprev: exclude
 
 ----
 
-Bgcolor: 
+Bgcolor: black
 
 ----
 
@@ -27,3 +27,7 @@ Textcolor: white
 ----
 
 Hideslide: shown
+
+----
+
+Overlaycolor: black

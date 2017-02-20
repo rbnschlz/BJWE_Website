@@ -1,8 +1,8 @@
-Caption: 
+Caption: Wendelstein, 2012
 
 ----
 
-Sort: 20
+Sort: 22
 
 ----
 
@@ -18,7 +18,7 @@ Keepprev: exclude
 
 ----
 
-Bgcolor: 
+Bgcolor: black
 
 ----
 
@@ -27,3 +27,7 @@ Textcolor: black
 ----
 
 Hideslide: shown
+
+----
+
+Overlaycolor: black

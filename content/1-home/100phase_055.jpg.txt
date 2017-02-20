@@ -2,7 +2,7 @@ Caption: Julian, 2016
 
 ----
 
-Sort: 18
+Sort: 20
 
 ----
 
@@ -18,7 +18,7 @@ Keepprev: exclude
 
 ----
 
-Bgcolor: 
+Bgcolor: white
 
 ----
 
@@ -27,3 +27,7 @@ Textcolor: black
 ----
 
 Hideslide: shown
+
+----
+
+Overlaycolor: black

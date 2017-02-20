@@ -3,23 +3,16 @@
 
 <div id="intro_wrapper"></div>
 
-<!-- <div id="title_wrapper_pseudo">
-	<a>Benjamin Werner</a>
-</div> -->
-
 <div id="title_wrapper" class="noclick">
-	<a>Benjamin Werner</a> <span class="caption"></span>
+	<a>Benjamin Werner</a>
+	<!-- <span class="caption"></span> -->
 </div>
 
-<div id="img_wrapper">
-	<!-- <div 
-		class="img_bg" 
-		:style="{ background: bg[Math.abs(currentNumber) % images.length] }"
-	></div> -->
-
-<!-- 	<span id="popup" class="opacityzero">
+<span id="popup" class="opacityzero">
 	<?php echo $page->images()->sortBy('sort', 'asc')->first()->caption(); ?>
-	</span> -->
+</span>
+
+<div id="img_wrapper">
 
 	<div class="img_wrapper_inner blur">
 
@@ -30,8 +23,10 @@
 	    $images = $page->images()->sortBy('sort', 'asc');
 	    foreach($images as $image) {
 	    	if($image->hideslide() != "hidden") {
-		    	$block = "<div class='img_slide'>";
-
+		    	$block = "<div class='img_slide'";
+		    	// $block .= $image->bgcolor() ? " style='background-color: {$image->bgcolor()}'" : "";
+		    	$block .= $image->bgcolor() == "black" ? " data-color='black'" : "";
+		    	$block .= $image->overlaycolor() == "white" ? " data-ovcolor='white'>" : ">";
 		    	//Prev
 		    	$prev  = $images->nth($i-1);
 	    		if($prev && $image->keepprev() == "include") {
@@ -46,7 +41,7 @@
 			    };
 
 		   		//Current
-		    	$block .= "<div class='img_slide_inner";
+		    	$block .= "<div class='img_slide_inner getcaption";
 		    	$block .= $image->position() ? " {$image->position()}" : "";
 		    	$block .= $image->sizing() ? " {$image->sizing()}" : "";
 		    	$block .= "' data-style='background-image: url(";
@@ -103,8 +98,8 @@
 			images, videos and texts be used, copied, displayed or pulled from this site without the expressed written agreement of Benjamin Werner.
 			Benjamin Werner is not responsible for the content of any linked external website.</p>
 			<span>Art Direction by <a href="http://www.offoffice.de" target="_blank">OFF</a></span>
-			<span>Design and Development by <a href="http://www.robinscholz.com" target="_blank">Robin Scholz</a></span>
-			<span>Typeface by <a href="http://www.abcdinamo.com" target="_blank">Dinamo</a></span>
+			<span>Design and Development by <a href="http://www.robinscholz.com" target="_blank" class="mobilebreak">Robin Scholz</a></span>
+			<!-- <span>Typeface by <a href="http://www.abcdinamo.com" target="_blank">Dinamo</a></span> -->
 			<?php echo $site->copyright()->kirbytext(); ?>
 		</div>
 	</div>
