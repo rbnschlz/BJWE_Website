@@ -1,0 +1,29 @@
+Caption: Julian, 2016
+
+----
+
+Sizing: large
+
+----
+
+Position: center
+
+----
+
+Keepprev: exclude
+
+----
+
+Bgcolor: Olive
+
+----
+
+Textcolor: black
+
+----
+
+Sort: 17
+
+----
+
+Hideslide: shown

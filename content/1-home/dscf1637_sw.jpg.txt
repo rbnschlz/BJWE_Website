@@ -1,0 +1,29 @@
+Caption: 
+
+----
+
+Sizing: small
+
+----
+
+Position: center
+
+----
+
+Keepprev: include
+
+----
+
+Hideslide: shown
+
+----
+
+Bgcolor: 
+
+----
+
+Textcolor: black
+
+----
+
+Sort: 6

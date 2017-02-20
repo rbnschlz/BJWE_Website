@@ -1,12 +1,12 @@
-Caption: New York, 2016
+Caption: 
 
 ----
 
-Sort: 17
+Sort: 10
 
 ----
 
-Sizing: full
+Sizing: medium
 
 ----
 
@@ -14,8 +14,16 @@ Position: center
 
 ----
 
-Keepprev: true
+Keepprev: exclude
 
 ----
 
-Bgcolor: white
+Bgcolor: OrangeRed
+
+----
+
+Textcolor: black
+
+----
+
+Hideslide: shown

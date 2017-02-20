@@ -1,4 +1,4 @@
-Caption: 
+Caption: Ameline (Opus), 2016
 
 ----
 
@@ -6,16 +6,24 @@ Sizing: full
 
 ----
 
-Position: center
+Position: left
 
 ----
 
-Keepprev: false
+Keepprev: exclude
 
 ----
 
-Bgcolor: white
+Bgcolor: 
 
 ----
 
-Sort: 27
+Sort: 23
+
+----
+
+Textcolor: black
+
+----
+
+Hideslide: hidden

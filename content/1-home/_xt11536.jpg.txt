@@ -2,11 +2,11 @@ Caption:
 
 ----
 
-Sort: 22
+Sort: 20
 
 ----
 
-Sizing: medium
+Sizing: small
 
 ----
 
@@ -14,8 +14,16 @@ Position: center
 
 ----
 
-Keepprev: true
+Keepprev: exclude
 
 ----
 
-Bgcolor: white
+Bgcolor: 
+
+----
+
+Textcolor: black
+
+----
+
+Hideslide: shown

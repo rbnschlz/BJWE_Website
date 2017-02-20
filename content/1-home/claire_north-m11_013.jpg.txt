@@ -2,20 +2,28 @@ Caption: Claire, 2015
 
 ----
 
-Sort: 9
+Sort: 11
 
 ----
 
-Sizing: large
+Sizing: small
 
 ----
 
-Position: center
+Position: right
 
 ----
 
-Keepprev: false
+Keepprev: exclude
 
 ----
 
-Bgcolor: white
+Bgcolor: 
+
+----
+
+Textcolor: black
+
+----
+
+Hideslide: hidden

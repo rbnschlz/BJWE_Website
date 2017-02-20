@@ -1,21 +1,29 @@
-Caption: Julian, 2013
+Caption: Julian, 2016
 
 ----
 
-Sort: 15
+Sort: 18
 
 ----
 
-Sizing: medium
+Sizing: full
 
 ----
 
-Position: right
+Position: center
 
 ----
 
-Keepprev: true
+Keepprev: exclude
 
 ----
 
-Bgcolor: white
+Bgcolor: 
+
+----
+
+Textcolor: black
+
+----
+
+Hideslide: shown

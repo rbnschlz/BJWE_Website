@@ -8,7 +8,7 @@
 </div> -->
 
 <div id="title_wrapper" class="noclick">
-	<a>Benjamin Werner</a>
+	<a>Benjamin Werner</a> <span class="caption"></span>
 </div>
 
 <div id="img_wrapper">
@@ -17,27 +17,49 @@
 		:style="{ background: bg[Math.abs(currentNumber) % images.length] }"
 	></div> -->
 
-	<span id="popup" class="opacityzero">
+<!-- 	<span id="popup" class="opacityzero">
 	<?php echo $page->images()->sortBy('sort', 'asc')->first()->caption(); ?>
-	</span>
+	</span> -->
 
 	<div class="img_wrapper_inner blur">
 
 	    <a class="control_next"></a>
 
-	    <?php foreach($page->images()->sortBy('sort', 'asc') as $image) {
-	    	$block = "<div class='img_slide'";
-	    	$block .= $image->bgcolor() ? " style='background: {$image->bgcolor()}'>" : ">";
-	    	$block .= "<div class='img_slide_inner ";
-	    	$block .= $image->sizing();
-	    	$block .= "' data-style='background-image: url(";
-	    	$block .= $image->url();
-	    	$block .= ")' data-caption='";
-	    	$block .= $image->caption();
-	    	$block .= "'></div></div>";
-	    	echo $block;
-	    }
+	    <?php 
+	   	$i = 0;
+	    $images = $page->images()->sortBy('sort', 'asc');
+	    foreach($images as $image) {
+	    	if($image->hideslide() != "hidden") {
+		    	$block = "<div class='img_slide'>";
 
+		    	//Prev
+		    	$prev  = $images->nth($i-1);
+	    		if($prev && $image->keepprev() == "include") {
+			    	$block .= "<div class='img_slide_inner_2";
+			    	$block .= $prev->position() ? " {$prev->position()}" : "";
+			    	$block .= $prev->sizing() ? " {$prev->sizing()}" : "";
+			    	$block .= "' data-style='background-image: url(";
+			    	$block .= $prev->url();
+			    	$block .= ")' data-caption='";
+			    	$block .= $prev->caption();
+			    	$block .= "'></div>";
+			    };
+
+		   		//Current
+		    	$block .= "<div class='img_slide_inner";
+		    	$block .= $image->position() ? " {$image->position()}" : "";
+		    	$block .= $image->sizing() ? " {$image->sizing()}" : "";
+		    	$block .= "' data-style='background-image: url(";
+		    	$block .= $image->url();
+		    	$block .= ")' data-caption='";
+		    	$block .= $image->caption();
+		    	$block .= "'></div>";
+
+		    	$block .= "</div>";
+		    	echo $block;
+	    	}
+	    	$i++;
+	    }
 		?>
 	</div>
 </div>
@@ -46,7 +68,7 @@
 <div class="info_wrapper hidden">
 	<div class="info_contact">
 		<span><a href="mailto:<?php echo $contact->mail(); ?>"><?php echo $contact->mail(); ?></a>, </span>
-		<span><?php echo $contact->phone(); ?></span>
+		<span><a href="tel:<?php echo $contact->phone(); ?>"><?php echo $contact->phone(); ?></a></span>
 		<div class="info_adress">
 			<span><?php echo $contact->street(); ?>, </span>
 			<span><?php echo $contact->city(); ?></span>

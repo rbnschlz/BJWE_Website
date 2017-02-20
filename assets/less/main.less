@@ -15,33 +15,22 @@
 @import "fonts.less";
 
 @c1: #fff;
-@c2: rgba(2, 10, 10, 0.9);
-@c3: rgba(2, 10, 10, 100);
+@c2: rgba(2, 10, 10, 1);
 
 @mp-s: 10px;
 @mp-m: 20px;
 @mp-l: 40px;
 
 @fs-s: 14px;
-@fs-m: 18px;
-
 @lh-s: 16px;
-@lh-m: 36px;
 
-@lbTransitionLength: 0.25s;
+@fontStack: 'Word', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+@fontStack2: 'Word-Lining', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
 
-@fontStack: 'Permanent-BoldOne', 'Helvetica Neue', 'Helvetica', Arial, serif;
-
-.fs-m {
-    font-size: @fs-m;
-}
 .fs-s {
     font-size: @fs-s;
 }
 
-.lh-m {
-     line-height: @lh-m;
-}
 .lh-s {
     line-height: @lh-s;
 }
@@ -58,8 +47,11 @@ em {
     font-style: italic;
 }
 
+.lining {
+  font-family: @fontStack2;
+}
+
 .text {
-  user-select: text; 
   font-family: @fontStack;
   .fs-s;
   .lh-s;
@@ -106,6 +98,7 @@ a {
   color: inherit;
   text-decoration: none;
   cursor: pointer; 
+  .lining;
 }
 
 p {
@@ -123,14 +116,6 @@ li {
 
 /* Custom
 -------------------------------------------------- */
-// .fade-enter-active, .fade-leave-active {
-//   transition: opacity 0.25s;
-// }
-
-// .fade-enter, 
-// .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
-//   opacity: 0
-// }
 
 #intro_wrapper {
   position: fixed;
@@ -140,6 +125,7 @@ li {
   top: 0;
   z-index: 95;
   .mixit;
+  .pointer;
 }
 
 #title_wrapper {
@@ -149,6 +135,15 @@ li {
   padding: @mp-s;
   margin: 0;
   z-index: 99;
+  user-select: none;
+  .lining;
+  .caption {
+    display: block;
+    // position: fixed;
+    // left: 50%;
+    // top: @mp-s;
+    // padding-left: @mp-m;
+  }
   // font-family: "BPdotsVertical-Bold";
 }
 
@@ -176,26 +171,92 @@ li {
   .transbackground;
 }
 
-.img_slide_inner {
-  height: 100vh;
+.img_slide {
   width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.img_slide_inner {
+  // height:  calc(~"100% - 20px");
+  // width:  calc(~"100% - 20px");
+  // margin: @mp-s;
+  height: 100%;
+  width: 100%;
+  top: 0;
   left: 0;
   user-select: none; 
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   position: fixed;
+  // z-index: 1;
 }
 
-.small, .medium {
-  margin: 10vh 5vw;
-  height: 80vh;
-  width: 90vw;
+.img_slide_inner_2 {
+  // height:  calc(~"100% - 20px");
+  // width:  calc(~"100% - 20px");
+  // margin: @mp-s;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  user-select: none; 
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: fixed;
+  // z-index: 2;
 }
 
 .full {
   background-size: cover;
+  width: 100%;
+  height: 100%;
+  margin: 0;
 }
+
+.small {
+  width: 75vw;
+  height: 75vh;
+  margin: 12.5vh 12.5vw;
+}
+
+.left {
+  width:  50vw;
+  margin-left: 0;
+}
+
+.right {
+  width:  50vw;
+  margin-left: 50vw;
+}
+
+.left.small {
+  width: 37.5vw;
+  height: 75vh;
+  margin: 12.5vh 6.25vw 12.5vh 6.25vw;
+}
+
+.right.small {
+  width: 37.5vw;
+  height: 75vh;
+  margin: 12.5vh 6.25vw 12.5vh 56.25vw;
+}
+
+// .left.small {
+//   width: 29vw;
+//   height: 100vh;
+//   margin: 0vh 14vw 0vh 14vw;
+// }
+
+// .right.small {
+//   width: 29vw;
+//   height: 100vh;
+//   margin: 0vh 14vw 15vh 57vw;
+// }
 
 .control_next {
   width: 100vw;
@@ -203,14 +264,6 @@ li {
   position: fixed;
   top: 0;
   z-index: 101;
-}
-
-.img_slide {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
 }
 
 #popup {
@@ -284,8 +337,9 @@ li {
 }
 
 .blur {
-  filter: blur(50px);
+  filter: blur(30px);
   // transform: scale(1.1)
+  transform: scale(4);
 }
 
 .noclick {

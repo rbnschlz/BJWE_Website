@@ -1,4 +1,4 @@
-Caption: 
+Caption: Amelie, 2015
 
 ----
 
@@ -10,7 +10,7 @@ Position: center
 
 ----
 
-Keepprev: false
+Keepprev: exclude
 
 ----
 
@@ -18,8 +18,12 @@ Bgcolor:
 
 ----
 
-Sort: 3
+Sort: 9
 
 ----
 
 Textcolor: white
+
+----
+
+Hideslide: shown

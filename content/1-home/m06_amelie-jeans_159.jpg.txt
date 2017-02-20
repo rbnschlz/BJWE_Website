@@ -1,4 +1,4 @@
-Caption: 
+Caption: Amelie, 2015
 
 ----
 
@@ -6,20 +6,24 @@ Sizing: small
 
 ----
 
-Position: center
+Position: right
 
 ----
 
-Keepprev: false
+Keepprev: exclude
 
 ----
 
-Bgcolor: black
+Bgcolor: 
 
 ----
 
-Sort: 2
+Sort: 7
 
 ----
 
 Textcolor: black
+
+----
+
+Hideslide: hidden

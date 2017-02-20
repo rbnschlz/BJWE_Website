@@ -1,4 +1,4 @@
-Caption: Hugo Boss, 2014
+Caption: Jake (Hugo Boss), 2016
 
 ----
 
@@ -10,16 +10,20 @@ Position: center
 
 ----
 
-Keepprev: false
+Keepprev: exclude
 
 ----
 
-Bgcolor: white
+Bgcolor: 
 
 ----
 
-Sort: 11
+Sort: 15
 
 ----
 
 Textcolor: black
+
+----
+
+Hideslide: shown

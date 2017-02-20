@@ -10,12 +10,20 @@ Position: center
 
 ----
 
-Keepprev: false
+Keepprev: exclude
 
 ----
 
-Bgcolor: white
+Bgcolor: DeepSkyBlue
 
 ----
 
-Sort: 4
+Sort: 1
+
+----
+
+Textcolor: black
+
+----
+
+Hideslide: shown

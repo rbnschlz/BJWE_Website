@@ -1,8 +1,8 @@
-Caption: 
+Caption: Tori, 2016
 
 ----
 
-Sizing: large
+Sizing: small
 
 ----
 
@@ -10,12 +10,20 @@ Position: center
 
 ----
 
-Keepprev: false
+Keepprev: include
 
 ----
 
-Bgcolor: white
+Bgcolor: 
 
 ----
 
-Sort: 6
+Sort: 3
+
+----
+
+Textcolor: black
+
+----
+
+Hideslide: shown

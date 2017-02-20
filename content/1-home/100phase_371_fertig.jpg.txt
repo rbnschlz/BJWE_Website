@@ -1,21 +1,29 @@
-Caption: 
+Caption: Julian, 2016
 
 ----
 
-Sizing: medium
+Sizing: small
 
 ----
 
-Position: center
+Position: right
 
 ----
 
-Keepprev: false
+Keepprev: include
 
 ----
 
-Bgcolor: white
+Bgcolor: 
 
 ----
 
-Sort: 16
+Sort: 19
+
+----
+
+Textcolor: black
+
+----
+
+Hideslide: shown

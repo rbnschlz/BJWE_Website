@@ -2,7 +2,7 @@ Caption:
 
 ----
 
-Sort: 21
+Sort: 13
 
 ----
 
@@ -14,12 +14,16 @@ Position: center
 
 ----
 
-Keepprev: false
+Keepprev: exclude
 
 ----
 
-Bgcolor: white
+Bgcolor: 
 
 ----
 
 Textcolor: white
+
+----
+
+Hideslide: shown

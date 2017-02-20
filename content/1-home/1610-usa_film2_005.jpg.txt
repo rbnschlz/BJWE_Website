@@ -1,0 +1,29 @@
+Caption: 
+
+----
+
+Sizing: large
+
+----
+
+Position: center
+
+----
+
+Keepprev: exclude
+
+----
+
+Bgcolor: Salmon
+
+----
+
+Textcolor: black
+
+----
+
+Sort: 25
+
+----
+
+Hideslide: shown

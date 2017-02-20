@@ -1,8 +1,8 @@
-Caption: Lena, 2016
+Caption: Ameline (Opus), 2016
 
 ----
 
-Sizing: medium
+Sizing: 
 
 ----
 
@@ -10,16 +10,20 @@ Position: center
 
 ----
 
-Keepprev: false
+Keepprev: exclude
 
 ----
 
-Bgcolor: white
+Bgcolor: 
 
 ----
 
-Sort: 24
+Sort: 22
 
 ----
 
 Textcolor: black
+
+----
+
+Hideslide: shown

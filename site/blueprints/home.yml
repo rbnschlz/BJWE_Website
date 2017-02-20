@@ -10,7 +10,6 @@ files:
       type: select
       options:
         small: Small
-        medium: Medium
         large: Large
         full: Full Bleed
       default: large
@@ -23,17 +22,29 @@ files:
         center: Center
       default: center
     keepprev:
-      label: Previous image visible?
-      type: toggle
-      text: yes/no
-      default: no
+      label: Include previous image on slide?
+      type: radio
+      options:
+        include: Include
+        exclude: Exclude
+      default: exclude
+    hideslide:
+      label: Hide this Slide?
+      type: radio
+      options:
+        hidden: Hide
+        shown: Show
+      default: shown
     bgcolor:
       label: Background Color
       type: select
       options:
-        black: Black
-        white: White
-      default: white 
+        LavenderBlush: Lavender Blush
+        DeepSkyBlue: Deep Sky Blue 
+        Olive: Olive
+        WhiteSmoke : White Smoke
+        OrangeRed: Orange Red  
+        Salmon: Salmon
     textcolor:
       label: Caption Color
       type: select

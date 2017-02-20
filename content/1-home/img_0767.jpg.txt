@@ -1,0 +1,29 @@
+Caption: 
+
+----
+
+Sizing: full
+
+----
+
+Position: center
+
+----
+
+Keepprev: exclude
+
+----
+
+Bgcolor: 
+
+----
+
+Textcolor: black
+
+----
+
+Sort: 16
+
+----
+
+Hideslide: shown

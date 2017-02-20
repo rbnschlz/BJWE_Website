@@ -2,20 +2,28 @@ Caption: Amelie, 2015
 
 ----
 
-Sizing: large
+Sizing: small
 
 ----
 
-Position: center
+Position: left
 
 ----
 
-Keepprev: false
+Keepprev: include
 
 ----
 
-Bgcolor: white
+Bgcolor: WhiteSmoke
 
 ----
 
-Sort: 1
+Sort: 8
+
+----
+
+Textcolor: black
+
+----
+
+Hideslide: shown
