@@ -2,7 +2,7 @@
 <body>
 <div id="intro_wrapper">
 	<div class="white_bc"></div>
-	<div id="intro_wrapper_img" style="background-image:url(<?php echo $page->images()->sortBy('sort', 'asc')->first()->resize(3000, 3000)->url() ?>)"></div>
+	<div id="intro_wrapper_img" class="blur" style="background-image:url(<?php echo $page->images()->sortBy('sort', 'asc')->first()->resize(3000, 3000)->url() ?>)"></div>
 </div>
 
 
@@ -66,8 +66,7 @@
 
 <div class="info_background hidden">
 	<div class="white_bc"></div>
-<!-- 	<div class="info_background_img_2" style="background-image:url(<?php echo $page->images()->sortBy('sort', 'asc')->first()->resize(3000, 3000)->url() ?>)"></div> -->
-	<div class="info_background_img" style="background-image:url(<?php echo $page->images()->sortBy('sort', 'asc')->first()->resize(3000, 3000)->url() ?>)"></div>
+	<div class="info_background_img blur" style="background-image:url(<?php echo $page->images()->sortBy('sort', 'asc')->first()->resize(3000, 3000)->url() ?>)"></div>
 </div>
 <div class="info_wrapper hidden">
 	<div class="info_contact">

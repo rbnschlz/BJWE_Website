@@ -1,8 +1,8 @@
-Caption: 
+Caption: Amelie
 
 ----
 
-Sizing: large
+Sizing: small
 
 ----
 
@@ -26,4 +26,4 @@ Hideslide: hidden
 
 ----
 
-Sort: 52
+Sort: 38

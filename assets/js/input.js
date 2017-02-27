@@ -30,7 +30,7 @@ require("../js/plugins.js");
 		var width = $(window).width();
 		var popwidth = $('#popup').outerWidth();
 		var x = event.pageX;
-		if(width - x < popwidth + 10) {
+		if(width - x < popwidth + 50) {
 			var x = x - popwidth - 20;
 		}
 		var y = event.pageY;
@@ -56,7 +56,7 @@ require("../js/plugins.js");
 	var captionint = function() {
 		$('#intro_wrapper').bind('click', function (event) {
 			clickclickclick();	
-			$('#intro_wrapper').addClass("hidden");
+			$('#intro_wrapper').addClass("hidden").hide();
 			$('#title_wrapper').removeClass("noclick");
 			// $('.img_wrapper_inner').removeClass('blur');
 			// var capt = $(".cycle-slide-active").children(".getcaption").attr("data-caption");
@@ -177,7 +177,7 @@ require("../js/plugins.js");
 	        	$('.img_wrapper_inner').cycle('prev');
 	        } else {
 	        	clickclickclick();	
-				$('#intro_wrapper').addClass("hidden");
+				$('#intro_wrapper').addClass("hidden").hide();
 				$('#title_wrapper').removeClass("noclick");
 	        }
 
@@ -190,7 +190,7 @@ require("../js/plugins.js");
 	        	$('.img_wrapper_inner').cycle('next');
 	        } else {
 	        	clickclickclick();	
-				$('#intro_wrapper').addClass("hidden");
+				$('#intro_wrapper').addClass("hidden").hide();
 				$('#title_wrapper').removeClass("noclick");
 	        }
 

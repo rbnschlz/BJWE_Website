@@ -1,12 +1,12 @@
-Caption: Christian
+Caption: Amelie
 
 ----
 
-Sizing: large
+Sizing: small
 
 ----
 
-Position: center
+Position: left
 
 ----
 
@@ -22,8 +22,8 @@ Keepprev: exclude
 
 ----
 
-Hideslide: shown
+Hideslide: hidden
 
 ----
 
-Sort: 53
+Sort: 37

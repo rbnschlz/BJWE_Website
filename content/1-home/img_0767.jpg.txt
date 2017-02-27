@@ -1,8 +1,8 @@
-Caption: Christian
+Caption: 
 
 ----
 
-Sizing: large
+Sizing: full
 
 ----
 
@@ -26,4 +26,4 @@ Hideslide: shown
 
 ----
 
-Sort: 53
+Sort: 12
