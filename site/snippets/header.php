@@ -3,6 +3,7 @@
 $images = $page->images()->shuffle();
 $img = $images->first()->url();
 ?>
+
 <html lang="en">
 <head>
   <meta charset="utf-8" />

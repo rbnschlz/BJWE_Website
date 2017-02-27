@@ -30,9 +30,6 @@ require("../js/plugins.js");
 		var width = $(window).width();
 		var popwidth = $('#popup').outerWidth();
 		var x = event.pageX;
-		console.log(width);
-		console.log(popwidth);
-		console.log(x);
 		if(width - x < popwidth + 10) {
 			var x = x - popwidth - 20;
 		}
@@ -49,11 +46,9 @@ require("../js/plugins.js");
 
 	var iosHeight = function(){
 		var height = $(window).height();
-		console.log(height);
 		if($(window).width() < 500){
-			$('.left.small, .right.small').css("height", height/2 - 40 + "px");
+			$('.left.small, .right.small, .left.large, .right.large, .left.full, .right.full').css("height", height/2 - 40 + "px");
 			$('.left.single, .right.single').css("height", height - 60 + "px");
-			console.log(height/2 + 'px');
 		}
 	}
 
@@ -61,7 +56,7 @@ require("../js/plugins.js");
 	var captionint = function() {
 		$('#intro_wrapper').bind('click', function (event) {
 			clickclickclick();	
-			$('#intro_wrapper').hide();
+			$('#intro_wrapper').addClass("hidden");
 			$('#title_wrapper').removeClass("noclick");
 			// $('.img_wrapper_inner').removeClass('blur');
 			// var capt = $(".cycle-slide-active").children(".getcaption").attr("data-caption");
@@ -78,8 +73,8 @@ require("../js/plugins.js");
 	var title = function(){
 		$('#title_wrapper, .info_wrapper').bind('click', function (event) {
 			$('#popup').toggleClass("opacityzero");
-			// $('.info_background').toggleClass('hidden');
 			$('.info_wrapper').toggleClass('hidden');
+			$('.info_background').toggleClass('hidden');
 			// $('.img_wrapper_inner').toggleClass('blur');
 
 			// var colors = ['pink', 'CornflowerBlue', 'GoldenRod'];
@@ -116,6 +111,7 @@ require("../js/plugins.js");
 				slides:".img_slide",
 				timeout: 0,
 				next: "> .control_next",
+				prev: "> .control_prev",
 				speed: 1,
 				swipe: true,
 			});
@@ -123,6 +119,10 @@ require("../js/plugins.js");
 	            first.attr( 'style', first.attr('data-style') );
 	            first = $(".cycle-slide").first().children().eq(1);
 	            first.attr( 'style', first.attr('data-style') );
+	        var last = $(".cycle-slide").last().children().last();
+	            last.attr( 'style', last.attr('data-style') );
+	            last = $(".cycle-slide").last().children().eq(1);
+	            last.attr( 'style', last.attr('data-style') );
 	       	var next = $(".cycle-slide-active").next().children().first();
 	            next.attr( 'style', next.attr('data-style') );
 	        var next = $(".cycle-slide-active").next().children().eq(1);
@@ -133,8 +133,7 @@ require("../js/plugins.js");
 	        	$('#popup').text(capt);
 	        	iosHeight();
 	        	var img = $(".cycle-slide-active").children(".getcaption");
-				$('.info_background').attr( 'style', img.attr('data-style') );
-
+				$('.info_background_img').attr( 'style', img.attr('data-style') );
 	        	// var color = $(".cycle-slide-active").attr("data-color");
 	        	// $('.caption').text(capt);
 		        // if(color == "black") {
@@ -145,6 +144,14 @@ require("../js/plugins.js");
 		        // 	$('#popup').removeClass("ftype");
 		        // }
 
+			});
+
+			$( '#img_wrapper' ).on( 'cycle-prev', function( event, opts ) {
+	        	var capt = $(".cycle-slide-active").children(".getcaption").attr("data-caption");
+	        	$('#popup').text(capt);
+	        	iosHeight();
+	        	var img = $(".cycle-slide-active").children(".getcaption");
+				$('.info_background_img').attr( 'style', img.attr('data-style') );
 			});
 	};
 
@@ -166,14 +173,26 @@ require("../js/plugins.js");
 	$(document).keydown(function(e) {
 	    switch(e.which) {
 	        case 37: // left
-	        break;
+	        if($("#intro_wrapper").hasClass("hidden")) {
+	        	$('.img_wrapper_inner').cycle('prev');
+	        } else {
+	        	clickclickclick();	
+				$('#intro_wrapper').addClass("hidden");
+				$('#title_wrapper').removeClass("noclick");
+	        }
 
 	        case 38: // up
 	        case 33: // page up
 	        break;
 
 	        case 39: // right
-	        $('.img_wrapper_inner').cycle('next');
+	        if($("#intro_wrapper").hasClass("hidden")) {
+	        	$('.img_wrapper_inner').cycle('next');
+	        } else {
+	        	clickclickclick();	
+				$('#intro_wrapper').addClass("hidden");
+				$('#title_wrapper').removeClass("noclick");
+	        }
 
 	        case 40: // down
 	        case 34: // page down

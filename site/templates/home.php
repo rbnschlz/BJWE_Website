@@ -1,7 +1,10 @@
 <?php snippet('header') ?>
 <body>
+<div id="intro_wrapper">
+	<div class="white_bc"></div>
+	<div id="intro_wrapper_img" style="background-image:url(<?php echo $page->images()->sortBy('sort', 'asc')->first()->resize(3000, 3000)->url() ?>)"></div>
+</div>
 
-<div id="intro_wrapper" style="background-image:url(<?php echo $page->images()->sortBy('sort', 'asc')->first()->resize(2000, 2000)->url() ?>)">'</div>
 
 <div id="title_wrapper" class="noclick">
 	<a>Benjamin Werner</a>
@@ -17,7 +20,7 @@
 	<div class="img_wrapper_inner">
 
 	    <div class="control_next"></div>
-
+	    <!-- <div class="control_prev"></div> -->
 	    <?php 
 	   	$i = 0;
 	    $images = $page->images()->sortBy('sort', 'asc');
@@ -35,7 +38,7 @@
 			    	$block .= $prev->position() ? " {$prev->position()}" : "";
 			    	$block .= $prev->sizing() ? " {$prev->sizing()}" : "";
 			    	$block .= "' data-style='background-image: url(";
-			    	$block .= $prev->resize(2000, 2000)->url();
+			    	$block .= $prev->resize(3000, 3000)->url();
 			    	$block .= ")' data-caption='";
 			    	$block .= $prev->caption();
 			    	$block .= "'></div>";
@@ -47,7 +50,7 @@
 		    	$block .= $image->sizing() ? " {$image->sizing()}" : "";
 		    	$block .= $prev && $image->keepprev() == "include" ? "" : " single";
 		    	$block .= "' data-style='background-image: url(";
-		    	$block .= $image->resize(2000, 2000)->url();
+		    	$block .= $image->resize(3000, 3000)->url();
 		    	$block .= ")' data-caption='";
 		    	$block .= $image->caption();
 		    	$block .= "'></div>";
@@ -61,8 +64,12 @@
 	</div>
 </div>
 
+<div class="info_background hidden">
+	<div class="white_bc"></div>
+<!-- 	<div class="info_background_img_2" style="background-image:url(<?php echo $page->images()->sortBy('sort', 'asc')->first()->resize(3000, 3000)->url() ?>)"></div> -->
+	<div class="info_background_img" style="background-image:url(<?php echo $page->images()->sortBy('sort', 'asc')->first()->resize(3000, 3000)->url() ?>)"></div>
+</div>
 <div class="info_wrapper hidden">
-	<div class="info_background"></div>
 	<div class="info_contact">
 		<span><a href="mailto:<?php echo $contact->mail(); ?>"><?php echo $contact->mail(); ?></a>, </span>
 		<span class="nobr"><a href="tel:<?php echo $contact->phone(); ?>"><?php echo $contact->phone(); ?></a></span>
@@ -96,11 +103,11 @@
 	<div class="info_imprint">
 		<a class="headline">Imprint</a>
 		<div class="info_imprint_inner opacityzero">
-			<p>All images and texts are copyrighted and owned by Benjamin Werner. Under no circumstances shall these digital files, 
-			images, videos and texts be used, copied, displayed or pulled from this site without the expressed written agreement of Benjamin Werner.
+			<p>All images and texts are copyrighted and owned by Benjamin Werner. Under no circumstances shall these digital files, images and videos be used, copied, displayed or pulled from this site without the expressed written agreement of Benjamin Werner.
 			Benjamin Werner is not responsible for the content of any linked external website.</p>
-			<span>Art Direction by <a href="http://www.offoffice.de" target="_blank">OFF</a></span>
-			<span>Design and Development by <a href="http://www.robinscholz.com" target="_blank" class="nobr">Robin Scholz</a></span>
+			<span>Site by <a href="http://www.offoffice.de" target="_blank">OFF</a></span>
+			<span>Johannes von Gross, Markus Lingemann</span>
+			<span>Assistance and Development: <a href="http://www.robinscholz.com" target="_blank" class="nobr">Robin Scholz</a></span>
 <!-- 			<span>Typeface by <a href="https://bold-decisions.biz/" target="_blank">Bold Decisions</a></span>
 			<?php echo $site->copyright()->kirbytext(); ?> -->
 		</div>

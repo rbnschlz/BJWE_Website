@@ -1,4 +1,4 @@
-Caption: Florence / Anna
+Caption: Florence & Anna
 
 ----
 
@@ -26,4 +26,4 @@ Hideslide: shown
 
 ----
 
-Sort: 11
+Sort: 1
