@@ -82,8 +82,6 @@ require("../js/plugins.js");
 			$('.info_wrapper').toggleClass('hidden');
 			// $('.img_wrapper_inner').toggleClass('blur');
 
-			var img = $(".cycle-slide-active").children(".getcaption");
-			$('.info_background').attr( 'style', img.attr('data-style') );
 			// var colors = ['pink', 'CornflowerBlue', 'GoldenRod'];
 			// $(".info_background").css("background-color", colors[Math.floor(Math.random() * colors.length)]);
 
@@ -134,6 +132,8 @@ require("../js/plugins.js");
 	        	var capt = $(".cycle-slide-active").children(".getcaption").attr("data-caption");
 	        	$('#popup').text(capt);
 	        	iosHeight();
+	        	var img = $(".cycle-slide-active").children(".getcaption");
+				$('.info_background').attr( 'style', img.attr('data-style') );
 
 	        	// var color = $(".cycle-slide-active").attr("data-color");
 	        	// $('.caption').text(capt);
@@ -173,7 +173,7 @@ require("../js/plugins.js");
 	        break;
 
 	        case 39: // right
-	        break;
+	        $('.img_wrapper_inner').cycle('next');
 
 	        case 40: // down
 	        case 34: // page down

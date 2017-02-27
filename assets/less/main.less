@@ -29,7 +29,7 @@
 @fs-xs: 18px;
 @lh-xs: 21px;
 
-@fontStack: 'LifeLT-Roman', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+@fontStack: 'RosartTRIAL-Regular', 'LifeLT-Roman', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
 @fontStack2: 'Word-Lining', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
 
 .fs-s {
@@ -63,7 +63,7 @@ em {
   .lh-s;
   color: @c2;
   // font-feature-settings: "ss04" 1;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
 }
 
 .pointer {
@@ -228,7 +228,7 @@ li {
   position: fixed;
   top: 0;
   z-index: 101;
-  .pointer;
+  // .pointer;
 }
 
 #popup {
@@ -259,7 +259,7 @@ li {
 }
 
 .info_contact {
-  padding-top: 48px;
+  padding-top: @lh-s + @mp-m;
   position: relative;
   z-index: 10;
 }
@@ -393,7 +393,7 @@ li {
   }
 
   .info_contact {
-    padding-top: 41px;
+    padding-top: @lh-xs + @mp-m;
     span:nth-child(2) {
       display: block;
     }
