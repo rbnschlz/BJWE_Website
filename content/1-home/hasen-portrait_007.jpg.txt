@@ -1,0 +1,29 @@
+Caption: 
+
+----
+
+Sizing: small
+
+----
+
+Position: center
+
+----
+
+Bgcolor: white
+
+----
+
+Overlaycolor: black
+
+----
+
+Keepprev: exclude
+
+----
+
+Hideslide: shown
+
+----
+
+Sort: 46

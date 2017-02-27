@@ -1,8 +1,8 @@
-Caption: Claire, 2015
+Caption: Claire
 
 ----
 
-Sort: 13
+Sort: 43
 
 ----
 
@@ -10,7 +10,7 @@ Sizing: small
 
 ----
 
-Position: right
+Position: center
 
 ----
 
@@ -26,7 +26,7 @@ Textcolor: black
 
 ----
 
-Hideslide: hidden
+Hideslide: shown
 
 ----
 

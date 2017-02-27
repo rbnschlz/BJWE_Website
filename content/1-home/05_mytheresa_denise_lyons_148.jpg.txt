@@ -1,0 +1,29 @@
+Caption: Denise
+
+----
+
+Sizing: small
+
+----
+
+Position: left
+
+----
+
+Bgcolor: white
+
+----
+
+Overlaycolor: black
+
+----
+
+Keepprev: exclude
+
+----
+
+Hideslide: shown
+
+----
+
+Sort: 6

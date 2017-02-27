@@ -1,0 +1,29 @@
+Caption: Anuschka
+
+----
+
+Sizing: small
+
+----
+
+Position: right
+
+----
+
+Bgcolor: white
+
+----
+
+Overlaycolor: black
+
+----
+
+Keepprev: include
+
+----
+
+Hideslide: shown
+
+----
+
+Sort: 23

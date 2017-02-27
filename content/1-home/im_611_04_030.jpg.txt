@@ -1,0 +1,29 @@
+Caption: Adeline
+
+----
+
+Sizing: small
+
+----
+
+Position: right
+
+----
+
+Bgcolor: white
+
+----
+
+Overlaycolor: black
+
+----
+
+Keepprev: include
+
+----
+
+Hideslide: shown
+
+----
+
+Sort: 16

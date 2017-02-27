@@ -1,0 +1,29 @@
+Caption: Florence / Anna
+
+----
+
+Sizing: small
+
+----
+
+Position: center
+
+----
+
+Bgcolor: white
+
+----
+
+Overlaycolor: black
+
+----
+
+Keepprev: include
+
+----
+
+Hideslide: shown
+
+----
+
+Sort: 11

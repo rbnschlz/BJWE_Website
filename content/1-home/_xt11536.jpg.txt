@@ -1,12 +1,8 @@
-Caption: Wendelstein, 2012
+Caption: 
 
 ----
 
-Sort: 22
-
-----
-
-Sizing: small
+Sizing: full
 
 ----
 
@@ -14,15 +10,15 @@ Position: center
 
 ----
 
+Bgcolor: white
+
+----
+
+Overlaycolor: black
+
+----
+
 Keepprev: exclude
-
-----
-
-Bgcolor: black
-
-----
-
-Textcolor: black
 
 ----
 
@@ -30,4 +26,4 @@ Hideslide: shown
 
 ----
 
-Overlaycolor: black
+Sort: 10

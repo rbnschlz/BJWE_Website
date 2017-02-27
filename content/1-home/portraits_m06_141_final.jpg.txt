@@ -1,0 +1,29 @@
+Caption: Oda
+
+----
+
+Sizing: small
+
+----
+
+Position: right
+
+----
+
+Bgcolor: white
+
+----
+
+Overlaycolor: black
+
+----
+
+Keepprev: exclude
+
+----
+
+Hideslide: hidden
+
+----
+
+Sort: 28

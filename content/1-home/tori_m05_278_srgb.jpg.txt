@@ -1,0 +1,29 @@
+Caption: Tori
+
+----
+
+Sizing: large
+
+----
+
+Position: center
+
+----
+
+Bgcolor: white
+
+----
+
+Overlaycolor: black
+
+----
+
+Keepprev: include
+
+----
+
+Hideslide: shown
+
+----
+
+Sort: 18

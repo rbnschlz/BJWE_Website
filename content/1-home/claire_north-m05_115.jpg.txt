@@ -1,0 +1,29 @@
+Caption: Claire
+
+----
+
+Sizing: small
+
+----
+
+Position: left
+
+----
+
+Bgcolor: white
+
+----
+
+Overlaycolor: black
+
+----
+
+Keepprev: exclude
+
+----
+
+Hideslide: hidden
+
+----
+
+Sort: 3

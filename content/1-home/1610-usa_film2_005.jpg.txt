@@ -1,12 +1,12 @@
-Caption: USA, 2015
+Caption: Uwe
 
 ----
 
-Sizing: large
+Sizing: small
 
 ----
 
-Position: center
+Position: left
 
 ----
 
@@ -22,11 +22,11 @@ Textcolor: black
 
 ----
 
-Sort: 26
+Sort: 41
 
 ----
 
-Hideslide: shown
+Hideslide: hidden
 
 ----
 

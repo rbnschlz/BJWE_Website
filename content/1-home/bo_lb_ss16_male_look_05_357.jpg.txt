@@ -1,4 +1,4 @@
-Caption: Jake (for Hugo Boss), 2016
+Caption: Jake
 
 ----
 
@@ -18,7 +18,7 @@ Bgcolor: white
 
 ----
 
-Sort: 17
+Sort: 40
 
 ----
 

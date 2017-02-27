@@ -1,4 +1,4 @@
-Caption: Tori, 2016
+Caption: Tori
 
 ----
 
@@ -18,7 +18,7 @@ Bgcolor: white
 
 ----
 
-Sort: 1
+Sort: 20
 
 ----
 

@@ -1,4 +1,4 @@
-Caption: Peter, 2011
+Caption: Jonathan / Caroline / Peter
 
 ----
 
@@ -6,7 +6,7 @@ Sizing: small
 
 ----
 
-Position: center
+Position: right
 
 ----
 
@@ -26,7 +26,7 @@ Textcolor: black
 
 ----
 
-Sort: 8
+Sort: 9
 
 ----
 

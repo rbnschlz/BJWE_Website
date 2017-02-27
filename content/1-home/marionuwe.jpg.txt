@@ -1,0 +1,29 @@
+Caption: Uwe
+
+----
+
+Sizing: small
+
+----
+
+Position: right
+
+----
+
+Bgcolor: black
+
+----
+
+Overlaycolor: black
+
+----
+
+Keepprev: include
+
+----
+
+Hideslide: shown
+
+----
+
+Sort: 42

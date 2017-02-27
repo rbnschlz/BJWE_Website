@@ -1,8 +1,8 @@
-Caption: Ameline (for Opus), 2016
+Caption: Adeline
 
 ----
 
-Sizing: full
+Sizing: small
 
 ----
 
@@ -14,11 +14,11 @@ Keepprev: exclude
 
 ----
 
-Bgcolor: black
+Bgcolor: white
 
 ----
 
-Sort: 24
+Sort: 15
 
 ----
 

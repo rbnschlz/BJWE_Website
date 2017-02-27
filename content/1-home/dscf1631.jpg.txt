@@ -1,0 +1,29 @@
+Caption: Mark / Peter
+
+----
+
+Sizing: large
+
+----
+
+Position: right
+
+----
+
+Bgcolor: white
+
+----
+
+Overlaycolor: black
+
+----
+
+Keepprev: include
+
+----
+
+Hideslide: shown
+
+----
+
+Sort: 14

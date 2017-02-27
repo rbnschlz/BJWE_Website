@@ -1,0 +1,29 @@
+Caption: Jenny
+
+----
+
+Sizing: large
+
+----
+
+Position: center
+
+----
+
+Bgcolor: white
+
+----
+
+Overlaycolor: black
+
+----
+
+Keepprev: exclude
+
+----
+
+Hideslide: shown
+
+----
+
+Sort: 1

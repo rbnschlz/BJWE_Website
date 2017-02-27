@@ -1,20 +1,20 @@
-Caption: Munich, 2014
+Caption: 
 
 ----
 
-Sort: 7
+Sort: 45
 
 ----
 
-Sizing: large
+Sizing: full
 
 ----
 
-Position: center
+Position: right
 
 ----
 
-Keepprev: exclude
+Keepprev: include
 
 ----
 

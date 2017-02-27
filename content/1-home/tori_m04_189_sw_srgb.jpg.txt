@@ -1,8 +1,8 @@
-Caption: Tori, 2016
+Caption: Tori
 
 ----
 
-Sizing: full
+Sizing: large
 
 ----
 
@@ -18,7 +18,7 @@ Bgcolor: white
 
 ----
 
-Sort: 3
+Sort: 19
 
 ----
 
