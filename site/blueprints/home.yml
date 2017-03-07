@@ -21,22 +21,6 @@ files:
         right: Right
         center: Center
       default: center
-    bgcolor:
-      label: Background Color
-      type: radio
-      options:
-        black: Black
-        white: White
-      default: white
-      help: If black is selected, the title will automatically be white
-    overlaycolor:
-      label: Overlay Type Color
-      type: radio
-      options:
-        black: Black
-        white: White
-      default: black
-      help: Adjust the color of the info overlay if needed. 
     keepprev:
       label: Include previous image on slide?
       type: radio

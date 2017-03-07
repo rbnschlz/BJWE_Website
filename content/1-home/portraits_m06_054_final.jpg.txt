@@ -6,7 +6,7 @@ Sizing: small
 
 ----
 
-Position: center
+Position: right
 
 ----
 
@@ -18,7 +18,7 @@ Overlaycolor: black
 
 ----
 
-Keepprev: include
+Keepprev: exclude
 
 ----
 
@@ -26,4 +26,4 @@ Hideslide: shown
 
 ----
 
-Sort: 1
+Sort: 2

@@ -2,7 +2,7 @@ Caption: Claire
 
 ----
 
-Sizing: full
+Sizing: small
 
 ----
 
@@ -26,4 +26,4 @@ Hideslide: hidden
 
 ----
 
-Sort: 26
+Sort: 28

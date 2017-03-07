@@ -1,0 +1,21 @@
+Sort: 4
+
+----
+
+Caption: 
+
+----
+
+Sizing: full
+
+----
+
+Position: center
+
+----
+
+Keepprev: exclude
+
+----
+
+Hideslide: shown

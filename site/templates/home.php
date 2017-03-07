@@ -2,17 +2,28 @@
 <body>
 <div id="intro_wrapper">
 	<div class="white_bc"></div>
-	<div id="intro_wrapper_img" class="blur" style="background-image:url(<?php echo $page->images()->sortBy('sort', 'asc')->first()->resize(3000, 3000)->url() ?>)"></div>
+	<?php 
+	if($page->files()->sortBy('sort', 'asc')->first()->type() == "image") {
+		$block = "<div id='intro_wrapper_img' class='blur' style='background-image:url(";
+		$block .= $page->files()->sortBy('sort', 'asc')->first()->resize(3000, 3000)->url();
+		$block .= ")'></div>";
+	} else if($page->files()->sortBy('sort', 'asc')->first()->type() == "video") {
+		$block = "<video id='intro_wrapper_video' class='blur' src='";
+		$block .= $page->files()->sortBy('sort', 'asc')->first()->url();
+		$block .= "' autoplay loop muted playsinline type='video/mp4'></video>";
+	}
+
+	echo $block;
+	?>
 </div>
 
 
 <div id="title_wrapper" class="noclick">
 	<a>Benjamin Werner</a>
-	<!-- <span class="caption"></span> -->
 </div>
 
 <span id="popup" class="opacityzero">
-	<?php echo $page->images()->sortBy('sort', 'asc')->first()->caption(); ?>
+	<?php echo $page->files()->sortBy('sort', 'asc')->first()->caption(); ?>
 </span>
 
 <div id="img_wrapper">
@@ -20,40 +31,56 @@
 	<div class="img_wrapper_inner">
 
 	    <div class="control_next"></div>
-	    <!-- <div class="control_prev"></div> -->
 	    <?php 
 	   	$i = 0;
-	    $images = $page->images()->sortBy('sort', 'asc');
+	    $images = $page->files()->sortBy('sort', 'asc');
 	    foreach($images as $image) {
 	    	if($image->hideslide() != "hidden") {
-		    	$block = "<div class='img_slide'";
-		    	// $block .= $image->bgcolor() ? " style='background-color: {$image->bgcolor()}'" : "";
-		    	// $block .= $image->bgcolor() == "black" ? " data-color='black'" : "";
-		    	// $block .= $image->overlaycolor() == "white" ? " data-ovcolor='white'" : "";
-		    	$block .= ">";
+		    	$block = "<div class='img_slide'>";
 		    	//Prev
 		    	$prev  = $images->nth($i-1);
 	    		if($prev && $image->keepprev() == "include") {
-			    	$block .= "<div class='img_slide_inner";
-			    	$block .= $prev->position() ? " {$prev->position()}" : "";
-			    	$block .= $prev->sizing() ? " {$prev->sizing()}" : "";
-			    	$block .= "' data-style='background-image: url(";
-			    	$block .= $prev->resize(3000, 3000)->url();
-			    	$block .= ")' data-caption='";
-			    	$block .= $prev->caption();
-			    	$block .= "'></div>";
+	    			if($prev->type() == "image") {
+				    	$block .= "<div class='img_slide_inner";
+				    	$block .= $prev->position() ? " {$prev->position()}" : "";
+				    	$block .= $prev->sizing() ? " {$prev->sizing()}" : "";
+				    	$block .= "' data-style='url(";
+				    	$block .= $prev->resize(3000, 3000)->url();
+				    	$block .= ")' data-caption='";
+				    	$block .= $prev->caption();
+				    	$block .= "'></div>";
+			    	} else if ($prev->type() == "video") {
+				    	$block .= "<video playsinline muted loop class='img_slide_inner prevvideo";
+				    	$block .= $prev->position() ? " {$prev->position()}" : "";
+				    	$block .= $prev->sizing() ? " {$prev->sizing()}" : "";
+	  					$block .= "' data-src='";
+	  					$block .= $prev->url();
+						$block .= "' type='video/mp4'></video>";
+				    };
 			    };
 
 		   		//Current
-		    	$block .= "<div class='img_slide_inner getcaption";
-		    	$block .= $image->position() ? " {$image->position()}" : "";
-		    	$block .= $image->sizing() ? " {$image->sizing()}" : "";
-		    	$block .= $prev && $image->keepprev() == "include" ? "" : " single";
-		    	$block .= "' data-style='background-image: url(";
-		    	$block .= $image->resize(3000, 3000)->url();
-		    	$block .= ")' data-caption='";
-		    	$block .= $image->caption();
-		    	$block .= "'></div>";
+		   		if($image->type() == "image") {
+			    	$block .= "<div class='img_slide_inner getcaption";
+			    	$block .= $image->position() ? " {$image->position()}" : "";
+			    	$block .= $image->sizing() ? " {$image->sizing()}" : "";
+			    	$block .= $prev && $image->keepprev() == "include" ? "" : " single";
+			    	$block .= "' data-style='url(";
+			    	$block .= $image->resize(3000, 3000)->url();
+			    	$block .= ")' data-caption='";
+			    	$block .= $image->caption();
+			    	$block .= "'></div>";
+			    } else if ($image->type() == "video") {
+			    	$block .= "<video playsinline muted loop class='img_slide_inner currvideo getcaption";
+			    	$block .= $image->position() ? " {$image->position()}" : "";
+			    	$block .= $image->sizing() ? " {$image->sizing()}" : "";
+			    	$block .= $prev && $image->keepprev() == "include" ? "" : " single";
+			    	$block .= "' data-caption='";
+			    	$block .= $image->caption();
+  					$block .= "' data-src='";
+  					$block .= $image->url();
+					$block .= "' type='video/mp4'></video>";
+			    };
 
 		    	$block .= "</div>";
 		    	echo $block;
@@ -64,9 +91,21 @@
 	</div>
 </div>
 
-<div class="info_background hidden">
+<div id="info_background" class="hidden">
 	<div class="white_bc"></div>
-	<div class="info_background_img blur" style="background-image:url(<?php echo $page->images()->sortBy('sort', 'asc')->first()->resize(3000, 3000)->url() ?>)"></div>
+	<?php 
+	if($page->files()->sortBy('sort', 'asc')->first()->type() == "image") {
+		$block = "<div id='info_background_img' class='blur' style='background-image:url(";
+		$block .= $page->files()->sortBy('sort', 'asc')->first()->resize(3000, 3000)->url();
+		$block .= ")'></div>";
+	} else if($page->files()->sortBy('sort', 'asc')->first()->type() == "video") {
+		$block = "<video id='info_background_video' class='blur' src='";
+		$block .= $page->files()->sortBy('sort', 'asc')->first()->url();
+		$block .= "' loop muted playsinline type='video/mp4'></video>";
+	}
+
+	echo $block;
+	?>
 </div>
 <div class="info_wrapper hidden">
 	<div class="info_contact">
@@ -107,8 +146,6 @@
 			<span>Site by <a href="http://www.offoffice.de" target="_blank">OFF</a></span>
 			<span>Johannes von Gross, Markus Lingemann</span>
 			<span>Assistance and Development: <a href="http://www.robinscholz.com" target="_blank" class="nobr">Robin Scholz</a></span>
-<!-- 			<span>Typeface by <a href="https://bold-decisions.biz/" target="_blank">Bold Decisions</a></span>
-			<?php echo $site->copyright()->kirbytext(); ?> -->
 		</div>
 	</div>
 </div>
