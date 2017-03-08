@@ -8,9 +8,12 @@
 		$block .= $page->files()->sortBy('sort', 'asc')->first()->resize(3000, 3000)->url();
 		$block .= ")'></div>";
 	} else if($page->files()->sortBy('sort', 'asc')->first()->type() == "video") {
-		$block = "<video id='intro_wrapper_video' class='blur' src='";
+		$block = "<video playsinline preload='metadata' muted loop id='intro_wrapper_video' class='blur'><source src='";
 		$block .= $page->files()->sortBy('sort', 'asc')->first()->url();
-		$block .= "' autoplay loop muted playsinline type='video/mp4'></video>";
+		$block .= "' type='video/mp4'>";
+		$block .= "<poster src='";
+		$block .= $page->files()->sortBy('sort', 'asc')->first()->vidimg()->toFile()->url();
+		$block .="'></video>";
 	}
 
 	echo $block;
@@ -50,18 +53,23 @@
 				    	$block .= $prev->caption();
 				    	$block .= "'></div>";
 			    	} else if ($prev->type() == "video") {
-				    	$block .= "<video playsinline muted loop class='img_slide_inner prevvideo";
-				    	$block .= $prev->position() ? " {$prev->position()}" : "";
-				    	$block .= $prev->sizing() ? " {$prev->sizing()}" : "";
+				    	$img = $prev->vidimg();
+				    	$block .= "<video playsinline muted loop class='img_slide_inner";
+				    	$block .= $prev->position() ? " {$image->position()}" : "";
+				    	$block .= $prev->sizing() ? " {$image->sizing()}" : "";
+				    	$block .= "' data-caption='";
+				    	$block .= $prev->caption();
+				    	$block .= $img->isNotEmpty() ? "' poster='{$img->toFile()->url()}" : "";
 	  					$block .= "' data-src='";
 	  					$block .= $prev->url();
-						$block .= "' type='video/mp4'></video>";
-				    };
+						$block .= "' type='video/mp4'>";
+						$block .= "</video>";
+					};
 			    };
 
 		   		//Current
 		   		if($image->type() == "image") {
-			    	$block .= "<div class='img_slide_inner getcaption";
+			    	$block .= "<div class='img_slide_inner capt";
 			    	$block .= $image->position() ? " {$image->position()}" : "";
 			    	$block .= $image->sizing() ? " {$image->sizing()}" : "";
 			    	$block .= $prev && $image->keepprev() == "include" ? "" : " single";
@@ -71,15 +79,18 @@
 			    	$block .= $image->caption();
 			    	$block .= "'></div>";
 			    } else if ($image->type() == "video") {
-			    	$block .= "<video playsinline muted loop class='img_slide_inner currvideo getcaption";
+			    	$img = $image->vidimg();
+			    	$block .= "<video playsinline muted loop class='img_slide_inner capt";
 			    	$block .= $image->position() ? " {$image->position()}" : "";
 			    	$block .= $image->sizing() ? " {$image->sizing()}" : "";
 			    	$block .= $prev && $image->keepprev() == "include" ? "" : " single";
 			    	$block .= "' data-caption='";
 			    	$block .= $image->caption();
+			    	$block .= $img->isNotEmpty() ? "' poster='{$img->toFile()->url()}" : "";
   					$block .= "' data-src='";
   					$block .= $image->url();
-					$block .= "' type='video/mp4'></video>";
+					$block .= "' type='video/mp4'>";
+					$block .= "</video>";
 			    };
 
 		    	$block .= "</div>";
@@ -99,33 +110,17 @@
 		$block .= $page->files()->sortBy('sort', 'asc')->first()->resize(3000, 3000)->url();
 		$block .= ")'></div>";
 	} else if($page->files()->sortBy('sort', 'asc')->first()->type() == "video") {
-		$block = "<video id='info_background_video' class='blur' src='";
+		$block = "<video playsinline preload='metadata' muted loop id='info_background_video' class='blur'><source src='";
 		$block .= $page->files()->sortBy('sort', 'asc')->first()->url();
-		$block .= "' loop muted playsinline type='video/mp4'></video>";
+		$block .= "' type='video/mp4'>";
+		$block .= "<poster src='";
+		$block .= $page->files()->sortBy('sort', 'asc')->first()->vidimg()->toFile()->url();
+		$block .="'></video>";
 	}
 
 	echo $block;
 	?>
 </div>
-
-<!-- SVG filter for Firefox  -->
-<!-- <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<defs>
-    <filter id="blurry">
-     	<feGaussianBlur stdDeviation="5"/>
-    </filter>
-    <filter id="drop-shadow">
-	    <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
-	    <feOffset dx="5" dy="5" result="offsetblur"/>
-	    <feFlood flood-color="#000000"/>
-	    <feComposite in2="offsetblur" operator="in"/>
-	    <feMerge>
-		    <feMergeNode/>
-		    <feMergeNode in="SourceGraphic"/>
-	    </feMerge>
-	</filter>
-</defs>
-</svg>	 -->
 
 <div class="info_wrapper hidden">
 	<div class="info_contact">

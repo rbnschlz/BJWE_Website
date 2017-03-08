@@ -35,6 +35,10 @@ files:
       options:
         shown: Show
         hidden: Hide
+    vidimg:
+      label: Video Preview Image
+      type: image
+      help: Choose preview image for videos in case auto play does not work.
   sortable: true
 fields:
   title:

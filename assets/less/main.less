@@ -4,9 +4,7 @@
   margin: 0;
   padding: 0;
   border: 0;
-  -webkit-box-sizing: border-box;
-   -moz-box-sizing: border-box;
-        box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-backface-visibility:  hidden;
   -webkit-tap-highlight-color:  transparent;
 }
@@ -18,7 +16,6 @@
 
 @c1: #fff;
 @c2: rgba(0, 20, 0, 1);
-// @c2: orangered;
 
 @mp-s: 10px;
 @mp-m: 20px;
@@ -33,23 +30,23 @@
 @fontStack: 'Rosart', 'Times New Roman', 'Times', serif;
 
 .fs-s {
-    font-size: @fs-s;
+  font-size: @fs-s;
 }
 
 .lh-s {
-    line-height: @lh-s;
+  line-height: @lh-s;
 }
 
 button:focus {
-    outline: none;
+  outline: none;
 }
 
 em {
-    font-style: italic;
+  font-style: italic;
 }
 
 .italic {
-    font-style: italic;
+  font-style: italic;
 }
 
 .mixit {
@@ -109,6 +106,11 @@ img {
 
 li {
   list-style: none;
+}
+
+poster {
+  width: 100%;
+  height: 100%;
 }
 
 /* Custom
@@ -369,14 +371,6 @@ video.full {
 /* Media Queries
 -------------------------------------------------- */
 
-@media only screen and (max-width: 900px) {
- 
-}
-
-@media only screen and (max-width: 700px) {
-  
-}
-
 @media only screen and (max-width: 500px) {
   html {
     font-size: @fs-xs;
@@ -384,8 +378,7 @@ video.full {
   }
 
   .blur {
-    // filter: blur(10px);
-    filter: url(#blurry);
+    filter: blur(5px);
     transform: scale(2);
   }
 

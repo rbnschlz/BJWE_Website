@@ -19,3 +19,7 @@ Keepprev: include
 ----
 
 Hideslide: shown
+
+----
+
+Vidimg: pfuetze1.jpg

@@ -19,3 +19,7 @@ Hideslide: shown
 ----
 
 Sort: 4
+
+----
+
+Vidimg: pfuetze1.jpg
