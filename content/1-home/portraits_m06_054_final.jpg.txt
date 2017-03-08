@@ -6,7 +6,7 @@ Sizing: small
 
 ----
 
-Position: right
+Position: center
 
 ----
 

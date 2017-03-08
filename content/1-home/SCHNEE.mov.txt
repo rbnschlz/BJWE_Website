@@ -1,4 +1,4 @@
-Sort: 4
+Sort: 54
 
 ----
 
@@ -6,7 +6,7 @@ Caption:
 
 ----
 
-Sizing: full
+Sizing: small
 
 ----
 
@@ -14,7 +14,7 @@ Position: center
 
 ----
 
-Keepprev: exclude
+Keepprev: include
 
 ----
 

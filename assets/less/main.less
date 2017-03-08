@@ -17,7 +17,8 @@
 @import "fonts.less";
 
 @c1: #fff;
-@c2: rgba(2, 10, 10, 1);
+@c2: rgba(0, 20, 0, 1);
+// @c2: orangered;
 
 @mp-s: 10px;
 @mp-m: 20px;
@@ -281,12 +282,13 @@ video.full {
 }
 
 #info_background {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+  width: 100vw;
+  height: 100vh;
+  top: -1vh;
+  left: -1vw;
   position: fixed;
   display: block;
+  overflow: hidden;
   z-index: 101;
   &_img {
     position: fixed;
@@ -297,6 +299,7 @@ video.full {
     top: 0;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
   }
   &_video {
     position: fixed;
@@ -321,6 +324,13 @@ video.full {
 
 .info_represent {
   padding: 0 0 @mp-m 0;
+  white-space: pre-line;
+  span {
+    display: block;
+  }
+  .nobr {
+    display: inline;
+  }
 }
 
 .info_imprint {
@@ -374,7 +384,8 @@ video.full {
   }
 
   .blur {
-    filter: blur(5px);
+    // filter: blur(10px);
+    filter: url(#blurry);
     transform: scale(2);
   }
 

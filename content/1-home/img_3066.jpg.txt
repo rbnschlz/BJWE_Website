@@ -22,8 +22,8 @@ Keepprev: exclude
 
 ----
 
-Hideslide: shown
+Hideslide: hidden
 
 ----
 
-Sort: 27
+Sort: 25
