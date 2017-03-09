@@ -22,7 +22,7 @@ Hideslide: shown
 
 ----
 
-Infocolor: black
+Infocolor: white
 
 ----
 
