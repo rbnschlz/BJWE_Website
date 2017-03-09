@@ -1,6 +1,10 @@
 title: Index
 pages: false
 files:
+  type: 
+    - image
+    - video
+  size: 5500000
   fields: 
     caption: 
       type: textarea
@@ -35,6 +39,13 @@ files:
       options:
         shown: Show
         hidden: Hide
+    infocolor:
+      label: Overlay Info Color
+      type: radio
+      default: black
+      options:
+        black: Black
+        white: White
     vidimg:
       label: Video Preview Image
       type: image

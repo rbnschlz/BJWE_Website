@@ -22,7 +22,7 @@ Textcolor: black
 
 ----
 
-Sort: 45
+Sort: 46
 
 ----
 
@@ -31,3 +31,11 @@ Hideslide: hidden
 ----
 
 Overlaycolor: black
+
+----
+
+Infocolor: black
+
+----
+
+Vidimg: 

@@ -26,4 +26,12 @@ Hideslide: shown
 
 ----
 
-Sort: 39
+Sort: 40
+
+----
+
+Infocolor: black
+
+----
+
+Vidimg: 

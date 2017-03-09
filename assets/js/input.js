@@ -20,37 +20,51 @@ $(document).on( 'cycle-initialized', function(e, opts) {
     });
 });
 
-var videoload = function() {
+var mediaload = function() {
 	var next = $(".cycle-slide-active").next().children();
 	var prev = $(".cycle-slide-active").prev().children();
 	var first = $(".cycle-slide").first().children();
-	(next).each(function() {
-		if($(this).is("video")){
-			source = $(this);
+	var last = $(".cycle-slide").last().children();
+	next.each(function() {
+		source = $(this);
+		if($(this).is("video") && !(this).hasAttribute("src")){
 			source.attr( 'src', source.attr('data-src'));
+		} else {
+			source.css('background-image', source.attr('data-style'));
 		};
 	});
 	prev.each(function() {
-		if($(this).is("video")){
-			source = $(this);
+		source = $(this);
+		if($(this).is("video") && !(this).hasAttribute("src")){
 			source.attr( 'src', source.attr('data-src'));
+		} else {
+			source.css('background-image', source.attr('data-style'));
 		};
 	});
 	first.each(function() {
-		if($(this).is("video")){
-			source = $(this).children("source");
+		source = $(this);
+		if($(this).is("video") && !(this).hasAttribute("src")){
 			source.attr( 'src', source.attr('data-src'));
+		} else {
+			source.css('background-image', source.attr('data-style'));
+		};
+	});
+	last.each(function() {
+		source = $(this);
+		if($(this).is("video") && !(this).hasAttribute("src")){
+			source.attr( 'src', source.attr('data-src'));
+		} else {
+			source.css('background-image', source.attr('data-style'));
 		};
 	});
 };
 
 //Video Play
 function playme () {
-	video = $(".cycle-slide-active").find("video").get(0)
+	video = $(".cycle-slide-active").find("video").get(0);
 	if($(".cycle-slide-active").find("video").length) {
 		var video = $(".cycle-slide-active").find("video").get(0);
 			video.play();
-			console.log("playing")
 	};
 }
 
@@ -65,6 +79,13 @@ function playmetoo () {
 			video.play();
 		}
 	};
+}
+
+//White Info Text
+var white = function() {
+	if($(".cycle-slide-active").attr("data-color") == "white") {
+		$(".info_wrapper, #title_wrapper").toggleClass("white");
+	}
 }
 
 //Caption Position
@@ -105,10 +126,12 @@ function changeme () {
 //iOS Fix
 var iosHeight = function(){
 	var height = $(window).height();
-	if($(window).width() < 500){
+	if($(window).width() < 568){
 		$('.left.small, .right.small, .left.large, .right.large, .left.full, .right.full').css("height", height/2 - 40 + "px");
 		$('.left.single, .right.single, .center.large, .center.small').css("height", height - 60 + "px");
-		console.log("heights");
+		if($(window).width() < $(window).height()) {
+			$('video').css("height", "auto");
+		}
 	}
 }
 
@@ -125,10 +148,12 @@ var captionint = function() {
 //Info Popup
 var title = function(){
 	$('#title_wrapper, .info_wrapper').bind('click', function (event) {
+		$('#title_wrapper, .info_wrapper').toggleClass('scroll');
 		$('#popup').toggleClass("opacityzero");
 		$('.info_wrapper').toggleClass('hidden');
 		$('#info_background').toggleClass('hidden');
 		playmetoo();
+		white();
 	});
 }
 
@@ -153,40 +178,28 @@ var slideit= function(){
 			swipe: false,
 		});
 
-		//Load First Images
-		var first = $(".cycle-slide").first().children().first();
-            first.css('background-image', first.attr('data-style'));
-            first = $(".cycle-slide").first().children().eq(1);
-            first.css( 'background-image', first.attr('data-style'));
-        var last = $(".cycle-slide").last().children().last();
-            last.css( 'background-image', last.attr('data-style'));
-            last = $(".cycle-slide").last().children().eq(1);
-            last.css( 'background-image', last.attr('data-style'));
-       	var next = $(".cycle-slide-active").next().children().first();
-            next.css( 'background-image', next.attr('data-style'));
-        var next = $(".cycle-slide-active").next().children().eq(1);
-            next.css( 'background-image', next.attr('data-style'));
-
         //Next Callback
-        $( '#img_wrapper' ).on( 'cycle-next', function( event, opts ) {
+        $( '.img_wrapper_inner' ).on( 'cycle-next', function( event, opts ) {
         	var capt = $(".cycle-slide-active").children(".capt").attr("data-caption");
         	$('#popup').text(capt);
         	changeme();
-        	videoload();
+        	mediaload();
 		});
 
 		//Prev Callback
-		$( '#img_wrapper' ).on( 'cycle-prev', function( event, opts ) {
+		$( '.img_wrapper_inner' ).on( 'cycle-prev', function( event, opts ) {
         	var capt = $(".cycle-slide-active").children(".capt").attr("data-caption");
         	$('#popup').text(capt);
         	changeme();
-        	videoload();
+        	mediaload();
 		});
 
-		$( '#img_wrapper' ).on( 'cycle-before', function( event, opts ) {
+		//Before Callback
+		$( '.img_wrapper_inner' ).on( 'cycle-before', function( event, opts ) {
+        	video = $(".cycle-slide-active").find("video").get(0);
 			if($(".cycle-slide-active").find("video").length) {
 				var video = $(".cycle-slide-active").find("video").get(0);
-				video.pause();
+					video.pause();
 			};
 		});
 };
@@ -199,21 +212,36 @@ $(window).on('load', function() {
 	info();
 	slideit();
 	iosHeight();
-	videoload();
+	mediaload();
+	$("body").on('swipeleft',  function(){
+		if($("#intro_wrapper").hasClass("hidden") && $(".info_wrapper").hasClass("hidden")) {
+			$(".img_wrapper_inner").cycle("next");
+			playme();
+		}
+	});
+
+	$("body").on('swiperight',  function(){
+		if($("#intro_wrapper").hasClass("hidden") && $(".info_wrapper").hasClass("hidden")) {
+			$(".img_wrapper_inner").cycle("prev");
+			playme();
+		}
+	});
 }); 
 
 //keypresses
 $(document).keydown(function(event) {
     switch(event.which) {
         case 37: // left
-        if($("#intro_wrapper").hasClass("hidden")) {
+        if($("#intro_wrapper").hasClass("hidden") && $(".info_wrapper").hasClass("hidden")) {
         	$('.img_wrapper_inner').cycle('prev');
+        	playme();
         }
         break;
 
         case 39: // right
-        if($("#intro_wrapper").hasClass("hidden")) {
+        if($("#intro_wrapper").hasClass("hidden") && $(".info_wrapper").hasClass("hidden")) {
         	$('.img_wrapper_inner').cycle('next');
+        	playme();
         }
         break;
 
@@ -223,6 +251,7 @@ $(document).keydown(function(event) {
 			$('.info_wrapper').toggleClass('hidden');
 			$('#info_background').toggleClass('hidden');
 		}
+		break;
 
         default: return; // exit this handler for other keys
     }

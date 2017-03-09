@@ -15,7 +15,8 @@
 @import "fonts.less";
 
 @c1: #fff;
-@c2: rgba(0, 20, 0, 1);
+@c2: rgba(2, 5, 5, 1);
+@c3: rgba(253, 250, 250, 1);
 
 @mp-s: 10px;
 @mp-m: 20px;
@@ -27,7 +28,7 @@
 @fs-xs: 16px;
 @lh-xs: 19px;
 
-@fontStack: 'Rosart', 'Times New Roman', 'Times', serif;
+@fontStack: 'Rosart-Reg', 'Times New Roman', 'Times', serif;
 
 .fs-s {
   font-size: @fs-s;
@@ -59,6 +60,8 @@ em {
   .lh-s;
   color: @c2;
   letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .blur {
@@ -155,10 +158,10 @@ poster {
 }
 
 #title_wrapper {
-  position: absolute;
+  position: fixed;
   left:0;
   top: 0; 
-  padding: @mp-s;
+  padding: 7px @mp-s;
   margin: 0;
   z-index: 102;
   user-select: none;
@@ -278,16 +281,16 @@ video.full {
 .info_wrapper {
   width: 100%;
   height: 100%;
-  position: absolute;
-  padding: @mp-s;
+  position: fixed;
+  padding: 7px @mp-s;
   z-index: 101;
 }
 
 #info_background {
   width: 100vw;
   height: 100vh;
-  top: -1vh;
-  left: -1vw;
+  top: 0;
+  left: 0;
   position: fixed;
   display: block;
   overflow: hidden;
@@ -358,6 +361,10 @@ video.full {
   opacity: 0;
 }
 
+.scroll {
+  position: absolute!important;
+}
+
 .opacityzero {
   opacity: 0;
   pointer-events: none;
@@ -368,10 +375,14 @@ video.full {
   pointer-events: none;
 }
 
+.white {
+  color: @c3;
+}
+
 /* Media Queries
 -------------------------------------------------- */
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 567px) {
   html {
     font-size: @fs-xs;
     line-height: @lh-xs;
@@ -387,7 +398,7 @@ video.full {
   }
 
   #title_wrapper, .info_wrapper {
-    padding-left: 20px;
+    padding: @mp-s @mp-m;
   }
 
   .img_slide_inner, .small {
@@ -434,10 +445,6 @@ video.full {
     background-size: contain;
     position: fixed;
     background-position: top;
-  }
-
-  video.small.single {
-    height: auto!important;
   }
 
   .prevvideo, .currvideo {

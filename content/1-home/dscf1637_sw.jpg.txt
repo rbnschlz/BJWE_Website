@@ -26,8 +26,16 @@ Textcolor: black
 
 ----
 
-Sort: 12
+Sort: 13
 
 ----
 
 Overlaycolor: black
+
+----
+
+Infocolor: black
+
+----
+
+Vidimg: 

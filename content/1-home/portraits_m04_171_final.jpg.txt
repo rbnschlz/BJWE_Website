@@ -27,3 +27,11 @@ Hideslide: shown
 ----
 
 Sort: 1
+
+----
+
+Infocolor: white
+
+----
+
+Vidimg: 

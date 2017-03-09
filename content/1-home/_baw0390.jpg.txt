@@ -2,7 +2,7 @@ Caption:
 
 ----
 
-Sort: 18
+Sort: 19
 
 ----
 
@@ -31,3 +31,11 @@ Hideslide: shown
 ----
 
 Overlaycolor: white
+
+----
+
+Infocolor: white
+
+----
+
+Vidimg: 

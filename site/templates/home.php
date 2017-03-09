@@ -15,7 +15,6 @@
 		$block .= $page->files()->sortBy('sort', 'asc')->first()->vidimg()->toFile()->url();
 		$block .="'></video>";
 	}
-
 	echo $block;
 	?>
 </div>
@@ -39,14 +38,15 @@
 	    $images = $page->files()->sortBy('sort', 'asc');
 	    foreach($images as $image) {
 	    	if($image->hideslide() != "hidden") {
-		    	$block = "<div class='img_slide'>";
+		    	$block = "<div class='img_slide'";
+		    	$block .= $image->infocolor() == "white" ? " data-color='{$image->infocolor()}'>" : ">";
 		    	//Prev
 		    	$prev  = $images->nth($i-1);
 	    		if($prev && $image->keepprev() == "include") {
 	    			if($prev->type() == "image") {
 				    	$block .= "<div class='img_slide_inner";
-				    	$block .= $prev->position() ? " {$prev->position()}" : "";
-				    	$block .= $prev->sizing() ? " {$prev->sizing()}" : "";
+				    	$block .= $prev->position()->isNotEmpty() ? " {$prev->position()}" : "";
+				    	$block .= $prev->sizing()->isNotEmpty() ? " {$prev->sizing()}" : "";
 				    	$block .= "' data-style='url(";
 				    	$block .= $prev->resize(3000, 3000)->url();
 				    	$block .= ")' data-caption='";
@@ -55,8 +55,8 @@
 			    	} else if ($prev->type() == "video") {
 				    	$img = $prev->vidimg();
 				    	$block .= "<video playsinline muted loop class='img_slide_inner";
-				    	$block .= $prev->position() ? " {$image->position()}" : "";
-				    	$block .= $prev->sizing() ? " {$image->sizing()}" : "";
+				    	$block .= $prev->position()->isNotEmpty() ? " {$image->position()}" : "";
+				    	$block .= $prev->sizing()->isNotEmpty() ? " {$image->sizing()}" : "";
 				    	$block .= "' data-caption='";
 				    	$block .= $prev->caption();
 				    	$block .= $img->isNotEmpty() ? "' poster='{$img->toFile()->url()}" : "";
@@ -66,12 +66,11 @@
 						$block .= "</video>";
 					};
 			    };
-
 		   		//Current
 		   		if($image->type() == "image") {
 			    	$block .= "<div class='img_slide_inner capt";
-			    	$block .= $image->position() ? " {$image->position()}" : "";
-			    	$block .= $image->sizing() ? " {$image->sizing()}" : "";
+			    	$block .= $image->position()->isNotEmpty() ? " {$image->position()}" : "";
+			    	$block .= $image->sizing()->isNotEmpty() ? " {$image->sizing()}" : "";
 			    	$block .= $prev && $image->keepprev() == "include" ? "" : " single";
 			    	$block .= "' data-style='url(";
 			    	$block .= $image->resize(3000, 3000)->url();
@@ -81,8 +80,8 @@
 			    } else if ($image->type() == "video") {
 			    	$img = $image->vidimg();
 			    	$block .= "<video playsinline muted loop class='img_slide_inner capt";
-			    	$block .= $image->position() ? " {$image->position()}" : "";
-			    	$block .= $image->sizing() ? " {$image->sizing()}" : "";
+			    	$block .= $image->position()->isNotEmpty() ? " {$image->position()}" : "";
+			    	$block .= $image->sizing()->isNotEmpty() ? " {$image->sizing()}" : "";
 			    	$block .= $prev && $image->keepprev() == "include" ? "" : " single";
 			    	$block .= "' data-caption='";
 			    	$block .= $image->caption();
@@ -146,7 +145,7 @@
 			echo $block;
 			};
 			if ($contact->instagram()->isNotEmpty()) { 
-				$block = "<a class='headline' href='";
+				$block = "<a class='instagram' href='";
 				$block .= $contact->instagram()->html();
 				$block .= "' target='_blank'>Instagram</a>";
 
@@ -156,8 +155,7 @@
 	<div class="info_imprint">
 		<a class="headline">Imprint</a>
 		<div class="info_imprint_inner opacityzero">
-			<p>All images and texts are copyrighted and owned by Benjamin Werner. Under no circumstances shall these digital files, images and videos be used, copied, displayed or pulled from this site without the expressed written agreement of Benjamin Werner.
-			Benjamin Werner is not responsible for the content of any linked external website.</p>
+			<p>All images and texts are copyrighted and owned by Benjamin Werner. Under no circumstances shall these digital files, images and videos be used, copied, displayed or pulled from this site without the expressed written agreement of Benjamin Werner.</p>
 			<span>Site by <a href="http://www.offoffice.de" target="_blank">OFF</a></span>
 			<span>Johannes von Gross, Markus Lingemann</span>
 			<span>Assistance and Development: <a href="http://www.robinscholz.com" target="_blank" class="nobr">Robin Scholz</a></span>

@@ -1,0 +1,29 @@
+Caption: 
+
+----
+
+Sizing: large
+
+----
+
+Position: center
+
+----
+
+Keepprev: exclude
+
+----
+
+Hideslide: shown
+
+----
+
+Infocolor: black
+
+----
+
+Vidimg: 
+
+----
+
+Sort: 2

@@ -2,7 +2,7 @@ Caption: Claire
 
 ----
 
-Sort: 47
+Sort: 48
 
 ----
 
@@ -31,3 +31,11 @@ Hideslide: shown
 ----
 
 Overlaycolor: black
+
+----
+
+Infocolor: black
+
+----
+
+Vidimg: 

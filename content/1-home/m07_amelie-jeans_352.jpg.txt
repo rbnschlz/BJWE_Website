@@ -18,7 +18,7 @@ Bgcolor: white
 
 ----
 
-Sort: 34
+Sort: 35
 
 ----
 
@@ -31,3 +31,11 @@ Hideslide: hidden
 ----
 
 Overlaycolor: black
+
+----
+
+Infocolor: black
+
+----
+
+Vidimg: 
