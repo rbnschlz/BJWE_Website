@@ -1,25 +1,7 @@
 require("../less/main.less");
 require("../js/plugins.js");
 
-//Slideshow Preload
-$(document).on( 'cycle-initialized', function(e, opts) {
-    var key = 'cycle-look-ahead';
-    opts.container.on( 'cycle-before', function( e, opts, outgoing, incoming, fwd ) {
-        var index = fwd ? (opts.nextSlide + 1) : (opts.nextSlide - 1),
-            slide = $( opts.slides[ index ] ),
-            images;
-
-        if ( slide.length && ! slide.data( key ) ) {
-            slide.data( key, true );
-            images = slide.is( 'div[data-style]' ) ? slide : slide.find( 'div[data-style]' );
-            images.each(function() {
-                var img = $(this);
-                img.css("background-image", img.attr('data-style'));
-            });
-        }
-    });
-});
-
+//Preloader
 var mediaload = function() {
 	var next = $(".cycle-slide-active").next().children();
 	var prev = $(".cycle-slide-active").prev().children();
@@ -126,7 +108,7 @@ function changeme () {
 //iOS Fix
 var iosHeight = function(){
 	var height = $(window).height();
-	if($(window).width() < 568){
+	if($(window).width() < 600){
 		$('.left.small, .right.small, .left.large, .right.large, .left.full, .right.full').css("height", height/2 - 40 + "px");
 		$('.left.single, .right.single, .center.large, .center.small').css("height", height - 60 + "px");
 		if($(window).width() < $(window).height()) {
@@ -176,6 +158,7 @@ var slideit= function(){
 			next: "> .control_next",
 			speed: 1,
 			swipe: false,
+			log: false,
 		});
 
         //Next Callback

@@ -4,7 +4,7 @@ files:
   type: 
     - image
     - video
-  size: 5500000
+  size: 6000000
   fields: 
     caption: 
       type: textarea

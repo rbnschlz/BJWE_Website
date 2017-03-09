@@ -8,12 +8,10 @@
 		$block .= $page->files()->sortBy('sort', 'asc')->first()->resize(3000, 3000)->url();
 		$block .= ")'></div>";
 	} else if($page->files()->sortBy('sort', 'asc')->first()->type() == "video") {
-		$block = "<video playsinline preload='metadata' muted loop id='intro_wrapper_video' class='blur'><source src='";
+		$block = "<video playsinline muted autoplay loop id='intro_wrapper_video' class='blur' src='";
 		$block .= $page->files()->sortBy('sort', 'asc')->first()->url();
-		$block .= "' type='video/mp4'>";
-		$block .= "<poster src='";
-		$block .= $page->files()->sortBy('sort', 'asc')->first()->vidimg()->toFile()->url();
-		$block .="'></video>";
+		$block .= "' type='video/mp4'";
+		$block .="></video>";
 	}
 	echo $block;
 	?>
@@ -109,12 +107,10 @@
 		$block .= $page->files()->sortBy('sort', 'asc')->first()->resize(3000, 3000)->url();
 		$block .= ")'></div>";
 	} else if($page->files()->sortBy('sort', 'asc')->first()->type() == "video") {
-		$block = "<video playsinline preload='metadata' muted loop id='info_background_video' class='blur'><source src='";
+		$block = "<video playsinline muted  loop id='info_background_video' class='blur' src='";
 		$block .= $page->files()->sortBy('sort', 'asc')->first()->url();
-		$block .= "' type='video/mp4'>";
-		$block .= "<poster src='";
-		$block .= $page->files()->sortBy('sort', 'asc')->first()->vidimg()->toFile()->url();
-		$block .="'></video>";
+		$block .= "' type='video/mp4'";
+		$block .="></video>";
 	}
 
 	echo $block;

@@ -1,4 +1,4 @@
-Sort: 55
+Sort: 4
 
 ----
 
@@ -22,7 +22,7 @@ Hideslide: shown
 
 ----
 
-Infocolor: white
+Infocolor: black
 
 ----
 
