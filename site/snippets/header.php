@@ -4,6 +4,18 @@ $images = $page->images()->shuffle();
 $img = $images->first()->url();
 ?>
 
+<!-- Developed by
+
+  SS    TTTTT   U  U    DDD      I     OO           SS      CC     H   H     OO      L     ZZZZ
+ S  S     T     U  U    D  D     I    O  O         S  S    C  C    H   H    O  O     L        Z
+ S       T      U  U   D   D    I    O   O         S      C       H   H    O   O    L        Z
+  S      T     U   U   D   D    I    O   O          S     C       HHHHH    O   O    L       Z
+   S     T     U  U    D   D    I    O   O           S    C       H   H    O   O    L      Z
+S  S    T      U  U   D   D    I     O  O         S  S    C  C   H   H     O  O    L      Z
+ SS     T       UU    DDDD     I      OO           SS      CC    H   H      OO     LLLL   ZZZZ 
+
+ -->
+
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -32,3 +44,4 @@ $img = $images->first()->url();
   <meta name="theme-color" content="#ffffff">
 
 </head>
+<body>

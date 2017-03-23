@@ -1,5 +1,5 @@
 <?php snippet('header') ?>
-<body>
+
 <div id="intro_wrapper">
 	<div class="white_bc"></div>
 	<?php 
@@ -107,9 +107,11 @@
 		$block .= $page->files()->sortBy('sort', 'asc')->first()->resize(3000, 3000)->url();
 		$block .= ")'></div>";
 	} else if($page->files()->sortBy('sort', 'asc')->first()->type() == "video") {
+		$img = $page->files()->sortBy('sort', 'asc')->first()->vidimg();
 		$block = "<video playsinline muted  loop id='info_background_video' class='blur' src='";
 		$block .= $page->files()->sortBy('sort', 'asc')->first()->url();
 		$block .= "' type='video/mp4'";
+		$block .= $img->isNotEmpty() ? " poster='{$img->toFile()->url()}'" : "";
 		$block .="></video>";
 	}
 

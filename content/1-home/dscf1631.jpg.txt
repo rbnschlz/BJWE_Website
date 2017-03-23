@@ -1,4 +1,4 @@
-Caption: Mark / Peter
+Caption: Jan / Peter
 
 ----
 
@@ -26,7 +26,7 @@ Hideslide: shown
 
 ----
 
-Sort: 17
+Sort: 15
 
 ----
 

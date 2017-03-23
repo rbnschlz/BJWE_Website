@@ -1,4 +1,4 @@
-Caption: Uwe
+Caption: Guillaume
 
 ----
 
@@ -26,7 +26,7 @@ Hideslide: shown
 
 ----
 
-Sort: 49
+Sort: 46
 
 ----
 
