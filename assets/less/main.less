@@ -191,7 +191,7 @@ li {
 
 .img_slide {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -379,7 +379,7 @@ video.full {
 /* Media Queries
 -------------------------------------------------- */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   html {
     font-size: @fs-xs;
     line-height: @lh-xs;
@@ -399,7 +399,7 @@ video.full {
   }
 
   .img_slide_inner, .small {
-    height: calc(~"100vh - 60px");
+    height: calc(~"100% - 60px");
     width: calc(~"100vw - 40px");
     margin: 40px 20px 20px 20px;
     top: 0;
@@ -416,7 +416,7 @@ video.full {
   }
 
   .left.small, .left.large, .left.full {
-    height: calc(~"50vh - 40px");
+    height: calc(~"50% - 40px");
     width: calc(~"100vw - 40px");
     margin: 40px 20px -20px 20px;
     float: left;
@@ -425,7 +425,7 @@ video.full {
   }
 
   .right.small, .right.large, .right.full {
-    height: calc(~"50vh - 40px");
+    height: calc(~"50% - 40px");
     width: calc(~"100vw - 40px");
     margin: 40px 20px -20px 20px;
     float: left;
@@ -434,7 +434,7 @@ video.full {
   }
 
   .small.single {
-    height: calc(~"100vh - 60px");
+    height: calc(~"100% - 60px");
     width: calc(~"100vw - 40px");
     margin: 40px 20px 20px 20px;
     top: 0;

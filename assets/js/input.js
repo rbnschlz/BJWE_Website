@@ -108,7 +108,7 @@ function changeme () {
 //iOS Fix
 var iosHeight = function(){
 	var height = $(window).height();
-	if($(window).width() < 600){
+	if($(window).width() < 768){
 		$('.left.small, .right.small, .left.large, .right.large, .left.full, .right.full').css("height", height/2 - 40 + "px");
 		$('.left.single, .right.single, .center.large, .center.small').css("height", height - 60 + "px");
 		if($(window).width() < $(window).height()) {
@@ -179,7 +179,7 @@ var slideit= function(){
 
 		//Before Callback
 		$( '.img_wrapper_inner' ).on( 'cycle-before', function( event, opts ) {
-        	video = $(".cycle-slide-active").find("video").get(0);
+        	// video = $(".cycle-slide-active").find("video").get(0);
 			if($(".cycle-slide-active").find("video").length) {
 				var video = $(".cycle-slide-active").find("video").get(0);
 					video.pause();
